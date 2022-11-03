@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStart));
             this.btnStart = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.lblResultHistory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStart
@@ -53,17 +54,29 @@
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
+            // lblResultHistory
+            // 
+            this.lblResultHistory.AutoSize = true;
+            this.lblResultHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lblResultHistory.Location = new System.Drawing.Point(650, 21);
+            this.lblResultHistory.Name = "lblResultHistory";
+            this.lblResultHistory.Size = new System.Drawing.Size(86, 26);
+            this.lblResultHistory.TabIndex = 2;
+            this.lblResultHistory.Text = "Historie";
+            // 
             // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblResultHistory);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnStart);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStart";
             this.Text = "Start";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -71,6 +84,7 @@
 
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Label lblResultHistory;
     }
 }
 

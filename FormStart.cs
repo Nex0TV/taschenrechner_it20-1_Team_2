@@ -25,6 +25,8 @@ namespace Taschenrechner
         private void btnSettings_Click(object sender, EventArgs e)
         {
             // einstellungs fenster öffnen
+            FormSettings settings = new FormSettings();
+            settings.ShowDialog();
         }
     }
 }
