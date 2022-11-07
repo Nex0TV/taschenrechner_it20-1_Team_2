@@ -105,7 +105,7 @@
             this.btnSaveAndQuit.Name = "btnSaveAndQuit";
             this.btnSaveAndQuit.Size = new System.Drawing.Size(400, 48);
             this.btnSaveAndQuit.TabIndex = 6;
-            this.btnSaveAndQuit.Text = "Speicher und Schließen";
+            this.btnSaveAndQuit.Text = "Speichern und Schließen";
             this.btnSaveAndQuit.UseVisualStyleBackColor = true;
             // 
             // btnSettingsReset
