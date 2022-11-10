@@ -16,39 +16,43 @@ namespace Taschenrechner
         public FormSettings()
         {
             InitializeComponent();
+            // Set default font to small
+            cBoxFontSize.SelectedIndex = 0;
         }
 
         private void btnFontColor_Click(object sender, EventArgs e)
         {
-            ColorDialog MyDialog = new ColorDialog();
+            ColorDialog DialogFontColor = new ColorDialog();
             // Keeps the user from selecting a custom color.
-            MyDialog.AllowFullOpen = false;
+            DialogFontColor.AllowFullOpen = false;
             // Allows the user to get help. (The default is false.)
-            MyDialog.ShowHelp = true;
+            DialogFontColor.ShowHelp = true;
             // Sets the initial color select to the current text color.
-            MyDialog.Color = btnFontColor.ForeColor;
+            DialogFontColor.Color = btnFontColor.ForeColor;
 
             // Update the text box color if the user clicks OK 
-            if (MyDialog.ShowDialog() == DialogResult.OK) 
-            { 
-                btnFontColor.ForeColor = MyDialog.Color;
+            if (DialogFontColor.ShowDialog() == DialogResult.OK) 
+            {
+                var fColor = DialogFontColor.Color;
+                Console.WriteLine(fColor);
             }
         }
 
         private void btnBackgroundColor_Click(object sender, EventArgs e)
         {
-            ColorDialog MyDialog = new ColorDialog();
+            ColorDialog DialogBackgroundColor = new ColorDialog();
             // Keeps the user from selecting a custom color.
-            MyDialog.AllowFullOpen = false;
+            DialogBackgroundColor.AllowFullOpen = false;
             // Allows the user to get help. (The default is false.)
-            MyDialog.ShowHelp = true;
+            DialogBackgroundColor.ShowHelp = true;
             // Sets the initial color select to the current text color.
-            MyDialog.Color = btnBackgroundColor.ForeColor;
+            DialogBackgroundColor.Color = btnBackgroundColor.ForeColor;
 
             // Update the text box color if the user clicks OK 
-            if (MyDialog.ShowDialog() == DialogResult.OK)
+            if (DialogBackgroundColor.ShowDialog() == DialogResult.OK)
             {
-                btnBackgroundColor.ForeColor = MyDialog.Color;
+                var bgColor = DialogBackgroundColor.Color;
+                Console.WriteLine(bgColor);
             }
         }
     }

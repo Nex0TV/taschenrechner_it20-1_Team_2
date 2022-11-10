@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblFontSize = new System.Windows.Forms.Label();
             this.btnFontColor = new System.Windows.Forms.Button();
             this.lblFontColor = new System.Windows.Forms.Label();
@@ -38,16 +37,8 @@
             this.clrBackground = new System.Windows.Forms.ColorDialog();
             this.btnSaveAndQuit = new System.Windows.Forms.Button();
             this.btnSettingsReset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.cBoxFontSize = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.numericUpDown1.Location = new System.Drawing.Point(219, 42);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(198, 35);
-            this.numericUpDown1.TabIndex = 0;
             // 
             // lblFontSize
             // 
@@ -117,11 +108,24 @@
             this.btnSettingsReset.Text = "Einstellung zurücksetzen";
             this.btnSettingsReset.UseVisualStyleBackColor = true;
             // 
+            // cBoxFontSize
+            // 
+            this.cBoxFontSize.FormattingEnabled = true;
+            this.cBoxFontSize.Items.AddRange(new object[] {
+            "Klein",
+            "Mittel",
+            "Groß"});
+            this.cBoxFontSize.Location = new System.Drawing.Point(219, 42);
+            this.cBoxFontSize.Name = "cBoxFontSize";
+            this.cBoxFontSize.Size = new System.Drawing.Size(198, 21);
+            this.cBoxFontSize.TabIndex = 8;
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 450);
+            this.Controls.Add(this.cBoxFontSize);
             this.Controls.Add(this.btnSettingsReset);
             this.Controls.Add(this.btnSaveAndQuit);
             this.Controls.Add(this.btnBackgroundColor);
@@ -129,18 +133,14 @@
             this.Controls.Add(this.btnFontColor);
             this.Controls.Add(this.lblFontColor);
             this.Controls.Add(this.lblFontSize);
-            this.Controls.Add(this.numericUpDown1);
             this.Name = "FormSettings";
             this.Text = "Einstellungen";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label lblFontSize;
         private System.Windows.Forms.Button btnFontColor;
         private System.Windows.Forms.Label lblFontColor;
@@ -150,5 +150,6 @@
         private System.Windows.Forms.ColorDialog clrBackground;
         private System.Windows.Forms.Button btnSaveAndQuit;
         private System.Windows.Forms.Button btnSettingsReset;
+        private System.Windows.Forms.ComboBox cBoxFontSize;
     }
 }
