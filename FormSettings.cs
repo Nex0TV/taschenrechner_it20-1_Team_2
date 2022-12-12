@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
 namespace Taschenrechner
 {
     public partial class FormSettings : Form
@@ -52,8 +51,16 @@ namespace Taschenrechner
             if (DialogBackgroundColor.ShowDialog() == DialogResult.OK)
             {
                 var bgColor = DialogBackgroundColor.Color;
+                
                 Console.WriteLine(bgColor);
+
+                
             }
+        }
+
+        private void btnSettingsReset_Click(object sender, EventArgs e)
+        {
+            // set options back to default 
         }
     }
 }

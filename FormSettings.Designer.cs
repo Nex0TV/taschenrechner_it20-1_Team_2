@@ -105,11 +105,13 @@
             this.btnSettingsReset.Name = "btnSettingsReset";
             this.btnSettingsReset.Size = new System.Drawing.Size(400, 48);
             this.btnSettingsReset.TabIndex = 7;
-            this.btnSettingsReset.Text = "Einstellung zurücksetzen";
+            this.btnSettingsReset.Text = "Einstellungen zurücksetzen";
             this.btnSettingsReset.UseVisualStyleBackColor = true;
+            this.btnSettingsReset.Click += new System.EventHandler(this.btnSettingsReset_Click);
             // 
             // cBoxFontSize
             // 
+            this.cBoxFontSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxFontSize.FormattingEnabled = true;
             this.cBoxFontSize.Items.AddRange(new object[] {
             "Klein",
