@@ -26,5 +26,17 @@ namespace Taschenrechner.Classes
                 return ergebnis;
             }
         }
+
+        public static double Potenz (double zahl, int potenz)
+        {
+            double ergebnis = 1;
+
+            for (int iterator = 0; iterator < potenz; iterator++)
+            {
+                ergebnis *= zahl;
+            }
+
+            return ergebnis;
+        }
     }
 }
