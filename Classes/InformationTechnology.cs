@@ -11,13 +11,13 @@ namespace Taschenrechner.Classes
     /// </summary>
     public class InformationTechnology
     {
-        public VideoSizeCalculator Video { get; set; }
+        public PrefixCalculator Prefix { get; set; }
         public class NumberSystemConverter
         {
             public double Number { get; set; }
             public double Result { get; set; }
 
-            public void ConvertTo(int currentBase, int resultBase)
+            public static void ConvertTo(int currentBase, int resultBase)
             {
                 if(currentBase < resultBase)
                 {
@@ -32,61 +32,31 @@ namespace Taschenrechner.Classes
             }
         }
 
-        public class VideoSizeCalculator
+        public static class VideoSizeCalculator
         {
-            public VideoSizeCalculator(int colorDepth = 0,
-                                       int channels = 0,
-                                       int width = 0,
-                                       int height = 0,
-                                       int fps = 0,
-                                       int videoLength = 0,
-                                       int imageSize = 0)
+            public static double CalculateVideoSize(int colorDepth = 0,
+                                                    int channels = 0,
+                                                    int width = 0,
+                                                    int height = 0,
+                                                    int fps = 0,
+                                                    int videoLength = 0,
+                                                    int imageSize = 0
+                )
             {
-                if (imageSize > 0)
+                if (imageSize == 0)
                 {
-                    ImageSize = imageSize;
+                    imageSize = colorDepth * channels * width * height;
                 }
-                else
-                {
-                    ColorDepth = colorDepth;
-                    Channels = channels;
-                    Width = width;
-                    Height = height;
-                    FPS = fps;
-                    VideoLength = videoLength;
-                }
-            }
-
-            public int ColorDepth { get; set; }
-            public int Channels { get; set; }
-            public int Width { get; set; }
-            public int Height { get; set; }
-            public int ImageSize { 
-                get { return ColorDepth * Channels * Width * Height; }
-                set { ImageSize = value; } 
-            }
-            public int FPS { get; set; }
-            // VideoLength in seconds
-            public int VideoLength { get; set; }
-
-            public double CalculateVideoSize()
-            {
-                return ImageSize * FPS * VideoLength;
+                return imageSize * fps * videoLength;
             }
         }
 
         public class PrefixCalculator
         {
             // Example Usage:
-            // var prefixCalc = new Taschenrechner.Classes.InformationTechnology.PrefixCalculator();
-            // prefixCalc.StartPrefix = "MB";
-            // prefixCalc.ResultPrefix = "MiB";
-            // Console.WriteLine(prefixCalc.Calculate(500));
+            // Console.WriteLine(prefixCalc.Calculate(500, "MiB", "MB"));
 
-            public string StartPrefix { get; set; }
-            public string ResultPrefix { get; set; }
-
-            private double Convert(double number,
+            private static double Calculate(double number,
                                    bool toLower=false,
                                    bool binary=false,
                                    int iterations = 0
@@ -107,58 +77,66 @@ namespace Taschenrechner.Classes
                 }
                 return number;
             }
-            
+
             /// <summary>
-            /// Method to call after setting the inizialization values.
-            /// Contains all logic to convert from and to the selected prefix.
+            /// Converts binary/decimal prefixes.
             /// </summary>
             /// <param name="number">Number to convert from</param>
-            public string Calculate(double number)
+            /// <param name="startPrefix">The Prefix of the number that will be convertert e.g. MiB</param>
+            /// <param name="resultPrefix">The Prefix of the number to convert to e.g. GB</param>
+            public static string Convert(double number, string startPrefix, string resultPrefix)
             {
-                bool binary = this.BinaryPrefixes.ContainsKey(this.StartPrefix);
-                double result = 0;
-
+                bool binary = BinaryPrefixes.ContainsKey(startPrefix);
+                double result;
+                double numWithoutPrefix;
+                // Convert to non prefix
                 if (binary)
                 {
-                    int iterations = this.BinaryPrefixes[this.StartPrefix];
-                    double numWithoutPrefix = this.ToLowerBinaryPrefix(number, iterations);
-
-                    iterations = this.DecimalPrefixes[this.ResultPrefix];
-                    result = this.ToHigherDecimalPrefix(numWithoutPrefix, iterations);
+                    int iterations = BinaryPrefixes[startPrefix];
+                    numWithoutPrefix = ToLowerBinaryPrefix(number, iterations);
                 }
                 else
                 {
-                    int iterations = this.DecimalPrefixes[this.StartPrefix];
-                    double numWithoutPrefix = this.ToLowerDecimalPrefix(number, iterations);
-
-                    iterations = this.BinaryPrefixes[this.ResultPrefix];
-                    result = this.ToHigherBinaryPrefix(numWithoutPrefix, iterations);
+                    int iterations = DecimalPrefixes[startPrefix];
+                    numWithoutPrefix = ToLowerDecimalPrefix(number, iterations);
                 }
 
-                return $"{result} {this.ResultPrefix}";
+                // Convert to the resultPrefix
+                if (DecimalPrefixes.ContainsKey(resultPrefix))
+                {
+                    int iterations = DecimalPrefixes[resultPrefix];
+                    result = ToHigherDecimalPrefix(numWithoutPrefix, iterations);
+                }
+                else
+                {
+                    int iterations  = BinaryPrefixes[resultPrefix];
+                    result = ToHigherBinaryPrefix(numWithoutPrefix, iterations);
+                }
+
+                return $"{result} {resultPrefix}";
             }
 
-            private double ToHigherBinaryPrefix(double number, int iterations)
+            private static double ToHigherBinaryPrefix(double number, int iterations)
             {
-                return Convert(number, toLower: false, binary: true, iterations: iterations);
+                return Calculate(number, toLower: false, binary: true, iterations: iterations);
             }
 
-            private double ToLowerBinaryPrefix(double number, int iterations)
+            private static double ToLowerBinaryPrefix(double number, int iterations)
             {
-                return Convert(number, toLower: true, binary: true, iterations: iterations);
+                return Calculate(number, toLower: true, binary: true, iterations: iterations);
             }
 
-            private double ToHigherDecimalPrefix(double number, int iterations)
+            private static double ToHigherDecimalPrefix(double number, int iterations)
             {
-                return Convert(number, toLower: false, binary: false, iterations: iterations);
+                return Calculate(number, toLower: false, binary: false, iterations: iterations);
             }
 
-            private double ToLowerDecimalPrefix(double number, int iterations)
+            private static double ToLowerDecimalPrefix(double number, int iterations)
             {
-                return Convert(number, toLower: true, binary: false, iterations: iterations);
+                return Calculate(number, toLower: true, binary: false, iterations: iterations);
             }
 
-            private readonly Dictionary<string, int> BinaryPrefixes = new Dictionary<string, int>
+            private static readonly Dictionary<string, int> BinaryPrefixes = new Dictionary<string, int>
             {
                 { "B",  0 },
                 { "KiB", 1 },
@@ -167,7 +145,7 @@ namespace Taschenrechner.Classes
                 { "TiB", 4 },
                 { "PiB", 5 },
             };
-            readonly Dictionary<string, int> DecimalPrefixes = new Dictionary<string, int>
+            readonly static Dictionary<string, int> DecimalPrefixes = new Dictionary<string, int>
             {
                 { "B",  0 },
                 { "kB", 1 },

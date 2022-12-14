@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32819.101
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taschenrechner", "Taschenrechner.csproj", "{6AB8E750-F99B-4FBF-8FA2-9AEC443ACB09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaschenrechnerTest", "..\TaschenrechnerTest\TaschenrechnerTest.csproj", "{B39BBB50-FF88-443D-9931-D8D8C10D22D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6AB8E750-F99B-4FBF-8FA2-9AEC443ACB09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AB8E750-F99B-4FBF-8FA2-9AEC443ACB09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AB8E750-F99B-4FBF-8FA2-9AEC443ACB09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B39BBB50-FF88-443D-9931-D8D8C10D22D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39BBB50-FF88-443D-9931-D8D8C10D22D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39BBB50-FF88-443D-9931-D8D8C10D22D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39BBB50-FF88-443D-9931-D8D8C10D22D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
