@@ -11,17 +11,19 @@ namespace Taschenrechner.Classes
     /// </summary>
     public class InformationTechnology
     {
-        public PrefixCalculator Prefix { get; set; }
-        public class NumberSystemConverter
+        public static class NumberSystemConverter
         {
-            public double Number { get; set; }
-            public double Result { get; set; }
-
-            public static void ConvertTo(int currentBase, int resultBase)
+            public static int Convert(double number, int currentBase, int resultBase)
             {
                 if(currentBase < resultBase)
                 {
                     // TODO: calc value of every char and add it up
+                    Console.WriteLine(number);
+                    for (int i = 0; i < number; i++)
+                    {
+                        string num = number.ToString();
+                        Console.WriteLine(num);
+                    }
                 }
                 else
                 {
@@ -29,6 +31,7 @@ namespace Taschenrechner.Classes
                     // TODO: dictionary for i.e. hexadecimal numbers
                     //       to convert the chars to numbers
                 }
+                return 0;
             }
         }
 
@@ -53,9 +56,6 @@ namespace Taschenrechner.Classes
 
         public class PrefixCalculator
         {
-            // Example Usage:
-            // Console.WriteLine(prefixCalc.Calculate(500, "MiB", "MB"));
-
             private static double Calculate(double number,
                                    bool toLower=false,
                                    bool binary=false,
@@ -138,14 +138,14 @@ namespace Taschenrechner.Classes
 
             private static readonly Dictionary<string, int> BinaryPrefixes = new Dictionary<string, int>
             {
-                { "B",  0 },
+                { "B",   0 },
                 { "KiB", 1 },
                 { "MiB", 2 },
                 { "GiB", 3 },
                 { "TiB", 4 },
                 { "PiB", 5 },
             };
-            readonly static Dictionary<string, int> DecimalPrefixes = new Dictionary<string, int>
+            private readonly static Dictionary<string, int> DecimalPrefixes = new Dictionary<string, int>
             {
                 { "B",  0 },
                 { "kB", 1 },
