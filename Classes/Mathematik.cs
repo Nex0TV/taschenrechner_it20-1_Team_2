@@ -22,16 +22,28 @@ namespace Taschenrechner.Classes
             return ergebnis;
         }
 
-        public static double Potenz (double zahl, int potenz)
+        public static double Potenz (double zahl, int exponent)
         {
             double ergebnis = 1;
 
-            for (int iterator = 0; iterator < potenz; iterator++)
+            for (int iterator = 0; iterator < exponent; iterator++)
             {
                 ergebnis *= zahl;
             }
 
             return ergebnis;
+        }
+
+        public static double Bruch (int zaehler, int nenner)
+        {
+            if(nenner != 0)
+            {
+                return zaehler / nenner;
+            }
+            else
+            {
+                throw new DivideByZeroException("Division of {" + zaehler + "} by zero.");
+            }
         }
     }
 }
