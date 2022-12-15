@@ -10,21 +10,16 @@ namespace Taschenrechner.Classes
     {
         public static int Fakultaet (int zahl)
         {
-            if(zahl == 0)
+            int ergebnis = 1;
+            if(zahl != 0)
             {
-                return 1;
-            } 
-            else
-            {
-                int ergebnis = 1;
-
                 for (int iterator = 1; iterator <= zahl; iterator++)
                 {
                     ergebnis *= iterator;
                 }
 
-                return ergebnis;
             }
+            return ergebnis;
         }
 
         public static double Potenz (double zahl, int potenz)
