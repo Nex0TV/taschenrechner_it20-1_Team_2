@@ -10,20 +10,51 @@ namespace Taschenrechner.Model
     {
         public static string parseCalculationInput(string inputValue)
         {
-           for (int i = 0; double.Parse(inputValue) > 0; i++)
+            bool isBracket = false;
+            var subtotalBrackets = new double[100];
+            double[] subtotalPoints = { };
+            double[] subtotalLines = { };
+
+            char[] delimiterChars = { '+', '-', '*', '/' };
+
+
+            int count = 0;
+
+            string res = "";
+
+            // input has values with dot?
+            if (inputValue.IndexOf(".") >= 1)
             {
-                char[] delimiter = { };
+                // replace them with a comma
+                inputValue = inputValue.Replace(".", ",");
+            }
 
-                inputValue.Replace(" ", "");
 
-
-
-                // input has values with dot?
-                if (inputValue.IndexOf(".") >= 1)
+            for (int i = 0; i < inputValue.Length; i++)
+            {
+                if (inputValue[i] == '(')
                 {
-                    // replace them with a comma
-                    inputValue = inputValue.Replace(".", ",");
+                    isBracket = true;
+                    continue;  
                 }
+
+                if (isBracket)
+                {
+                    if (res.IndexOfAny(delimiterChars) >= 2)
+                    {
+                        res += inputValue[i];
+                    }
+
+
+                }
+
+                if (inputValue[i] == ')')
+                {
+                    isBracket = false;
+                    continue;
+                }
+
+                
             }
 
             return inputValue;
