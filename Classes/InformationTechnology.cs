@@ -13,25 +13,30 @@ namespace Taschenrechner.Classes
     {
         public static class NumberSystemConverter
         {
-            public static int Convert(double number, int currentBase, int resultBase)
+            public static double Convert(double number, int currentBase, int resultBase)
             {
-                if(currentBase < resultBase)
+                double result = 0;
+                var num = number.ToString();
+                // convert to decimal system
+                for (int i = num.Length - 1; i > -1; i--)
                 {
-                    // TODO: calc value of every char and add it up
-                    Console.WriteLine(number);
-                    for (int i = 0; i < number; i++)
-                    {
-                        string num = number.ToString();
-                        Console.WriteLine(num);
-                    }
+                    double digitValue = Char.GetNumericValue(num[i]) * Mathematik.Potenz(currentBase, (num.Length - 1) - i);
+                    result += digitValue;
                 }
-                else
+
+                // convert to result system
+                // TODO: divide the number
+                // TODO: dictionary for i.e. hexadecimal numbers
+                //       to convert the chars to numbers
+                double remainder = 1;
+                double temp_value = 0;
+                while (remainder != 0)
                 {
-                    // TODO: divide the number
-                    // TODO: dictionary for i.e. hexadecimal numbers
-                    //       to convert the chars to numbers
+                    temp_value = number / resultBase;
+                    remainder = number % resultBase;
                 }
-                return 0;
+
+                return result;
             }
         }
 
@@ -57,8 +62,8 @@ namespace Taschenrechner.Classes
         public class PrefixCalculator
         {
             private static double Calculate(double number,
-                                   bool toLower=false,
-                                   bool binary=false,
+                                   bool toLower = false,
+                                   bool binary = false,
                                    int iterations = 0
                                    )
             {
@@ -86,7 +91,7 @@ namespace Taschenrechner.Classes
             /// <param name="resultPrefix">The Prefix of the number to convert to e.g. GB</param>
             public static string Convert(double number, string startPrefix, string resultPrefix)
             {
-                bool binary = BinaryPrefixes.ContainsKey(startPrefix);
+                var binary = BinaryPrefixes.ContainsKey(startPrefix);
                 double result;
                 double numWithoutPrefix;
                 // Convert to non prefix
@@ -109,7 +114,7 @@ namespace Taschenrechner.Classes
                 }
                 else
                 {
-                    int iterations  = BinaryPrefixes[resultPrefix];
+                    int iterations = BinaryPrefixes[resultPrefix];
                     result = ToHigherBinaryPrefix(numWithoutPrefix, iterations);
                 }
 
