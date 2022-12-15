@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Taschenrechner.Classes
 {
-    class Prozentrechnung
+    public class Prozentrechnung
     {
         public static double ProzentDazu (double psatz, double grundwert)
         {
@@ -27,7 +27,7 @@ namespace Taschenrechner.Classes
 
             if (prozentsatz != 0)
             {
-                ergebnis = ((prozentsatz / 100) * grundwert) + grundwert;
+                ergebnis = grundwert - ((prozentsatz / 100) * grundwert);
 
             }
             return ergebnis;
