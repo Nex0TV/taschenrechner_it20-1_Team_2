@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Taschenrechner.Model
 {
@@ -11,50 +12,31 @@ namespace Taschenrechner.Model
         public static string parseCalculationInput(string inputValue)
         {
             bool isBracket = false;
-            var subtotalBrackets = new double[100];
+
+            string[] currentResult = new string[] { };
+
+            double[] subtotalBrackets = new double[100];
             double[] subtotalPoints = { };
             double[] subtotalLines = { };
 
             char[] delimiterChars = { '+', '-', '*', '/' };
 
+            var regex = @"([*+/\-)(])|([0-9,0-9]+)";
 
-            int count = 0;
+            var count = 0;
 
-            string res = "";
+            // dot is set? replace with comma
+            inputValue = inputValue.Replace(".", ",");
 
-            // input has values with dot?
-            if (inputValue.IndexOf(".") >= 1)
+            foreach (var match in Regex.Matches(inputValue, regex))
             {
-                // replace them with a comma
-                inputValue = inputValue.Replace(".", ",");
+                currentResult = new List<string>(currentResult) { match.ToString() }.ToArray();
             }
 
 
-            for (int i = 0; i < inputValue.Length; i++)
+            for (var i = 0; i < currentResult.Length; i++)
             {
-                if (inputValue[i] == '(')
-                {
-                    isBracket = true;
-                    continue;  
-                }
-
-                if (isBracket)
-                {
-                    if (res.IndexOfAny(delimiterChars) >= 2)
-                    {
-                        res += inputValue[i];
-                    }
-
-
-                }
-
-                if (inputValue[i] == ')')
-                {
-                    isBracket = false;
-                    continue;
-                }
-
-                
+                Console.WriteLine(currentResult[i]);
             }
 
             return inputValue;
