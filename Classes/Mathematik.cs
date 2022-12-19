@@ -45,5 +45,17 @@ namespace Taschenrechner.Classes
                 throw new DivideByZeroException("Division of {" + zaehler + "} by zero.");
             }
         }
+
+        public static double Wurzel(double zahl)
+        {
+            double x = 1;
+
+            do
+            {
+                x = (x + zahl / x) / 2;
+            } while ((x * x).ToString("F6") != zahl.ToString("F6"));
+
+            return Convert.ToDouble(x.ToString("F6"));
+        }
     }
 }
