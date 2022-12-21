@@ -18,8 +18,8 @@ namespace Taschenrechner.Classes
 
             rest = kredit - tilgungsAnteil;
 
-            for (int i = 0; i < rest; i++) { 
-                    
+            for (int i = 0; i <= rest; i++) {
+                Console.WriteLine(i);
             }
     }
     }
