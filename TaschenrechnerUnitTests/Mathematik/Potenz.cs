@@ -63,7 +63,7 @@ namespace TaschenrechnerUnitTests
         public void Input_1p56_4()
         {
             double result = Mathematik.Potenz(1.56, 4);
-            Assert.That(result == 5.92240896, "Ergibt nicht 5.92240896 ! " + result + " wurde berechnet!");
+            Assert.That(result == 5.92240896, "Ergibt nicht 5.92240896! " + result + " wurde berechnet!");
         }
     }
 }

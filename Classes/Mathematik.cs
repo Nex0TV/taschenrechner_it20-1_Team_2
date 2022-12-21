@@ -38,7 +38,8 @@ namespace Taschenrechner.Classes
         {
             if(nenner != 0)
             {
-                return zaehler / nenner;
+                double ergebnis = Convert.ToDouble(zaehler) / Convert.ToDouble(nenner);
+                return ergebnis;
             }
             else
             {
@@ -60,6 +61,11 @@ namespace Taschenrechner.Classes
 
         private static bool IstPrimzahl(int zahl)
         {
+            if(zahl <= 1)
+            {
+                return false;
+            }
+
             for (int iterator = 2; iterator < zahl; iterator++)
             {
                 if (zahl % iterator == 0)
@@ -72,14 +78,18 @@ namespace Taschenrechner.Classes
 
         public static int[] Primzahlen(int startzahl, int endzahl)
         {
+
             int[] primzahlen = new int[0];
 
-            for (int iterator = startzahl; iterator <= endzahl; iterator++)
+            if(startzahl <= endzahl)
             {
-                if(IstPrimzahl(iterator))
+                for (int iterator = startzahl; iterator <= endzahl; iterator++)
                 {
-                    Array.Resize(ref primzahlen, primzahlen.Length + 1);
-                    primzahlen[primzahlen.Length - 1] = iterator;
+                    if (iterator > 1 && IstPrimzahl(iterator))
+                    {
+                        Array.Resize(ref primzahlen, primzahlen.Length + 1);
+                        primzahlen[primzahlen.Length - 1] = iterator;
+                    }
                 }
             }
 
