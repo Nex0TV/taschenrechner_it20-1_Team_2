@@ -45,18 +45,26 @@ namespace Taschenrechner.Classes
 
                 data.Add(new Dictionary<string, object>
                 {
-                    { "Jahr:", jahr },
+                    { "Jahr", jahr },
                     { "Gesamtbetrag", kredit },
-                    { "Zins:", zins },
-                    { "Tilgung:", tilgung },
+                    { "Zins", zins },
+                    { "Tilgung", tilgung },
                     { "Annuität", annuitaet },
                     { "Restschuld", kreditsumme },
-                    { "Zinsen gesamt:", gesamtZins },
-                    { "Annuität gesamt:", gesamtAnnuitaet }
+                    { "Zinsen gesamt", gesamtZins },
+                    { "Annuität gesamt", gesamtAnnuitaet }
                 });
 
                 jahr++;
             }
+
+
+            foreach (Dictionary<string, object> entry in data)
+            {
+                Console.WriteLine(entry.Keys.Count);
+            }
+
+
 
             // Display the result on the form or in a data grid
             return data;
