@@ -7,12 +7,15 @@ using System.Windows.Forms;
 
 namespace Taschenrechner.Classes
 {
-    class Kreditrechner
+    public class Kreditrechner
     {
         // zinsen
-        private static List<Dictionary<string, object>> Ratenkredit (double kreditsumme, int laufzeit, double zinssatz) {
-            List<Dictionary<string, object>> arr = new List<Dictionary<string, object>>();
+        public static List<Dictionary<string, object>> Ratenkredit (double kreditsumme, int laufzeit, double zinssatz) {
+            List<Dictionary<string, object>> data = new List<Dictionary<string, object>>();
             List<Dictionary<string, object>> arr2 = new List<Dictionary<string, object>>();
+
+            //var data = [arr, arr2];
+            double kredit = kreditsumme;
 
             double tilgung = kreditsumme / laufzeit;
             double laufzeitMonate = laufzeit * 12;
@@ -40,18 +43,14 @@ namespace Taschenrechner.Classes
                 gesamtAnnuitaet += annuitaet;
                 gesamtZins += zins;
 
-                arr.Add(new Dictionary<string, object>
+                data.Add(new Dictionary<string, object>
                 {
                     { "Jahr:", jahr },
-                    { "Gesamtbetrag", kreditsumme },
+                    { "Gesamtbetrag", kredit },
                     { "Zins:", zins },
                     { "Tilgung:", tilgung },
                     { "Annuität", annuitaet },
-                    { "Restschuld", kreditsumme }
-                });
-
-                arr2.Add(new Dictionary<string, object>
-                {
+                    { "Restschuld", kreditsumme },
                     { "Zinsen gesamt:", gesamtZins },
                     { "Annuität gesamt:", gesamtAnnuitaet }
                 });
@@ -59,11 +58,8 @@ namespace Taschenrechner.Classes
                 jahr++;
             }
 
-            Console.WriteLine(laufzeitMonate.ToString());
-            Console.WriteLine(laufzeit.ToString());
-
             // Display the result on the form or in a data grid
-            return arr;
+            return data;
         }
     }
 }
