@@ -9,34 +9,51 @@ namespace Taschenrechner.Classes
     /// <summary>
     /// Contains Classes for different 
     /// </summary>
+    /// 
     public class InformationTechnology
     {
         public static class NumberSystemConverter
         {
-            public static double Convert(double number, int currentBase, int resultBase)
+            public static int[] GetIntArray(int num, int baseNum)
             {
-                double result = 0;
-                var num = number.ToString();
-                // convert to decimal system
-                for (int i = num.Length - 1; i > -1; i--)
+                List<int> listOfInts = new List<int>();
+                while (num > 0)
                 {
-                    double digitValue = Char.GetNumericValue(num[i]) * Mathematik.Potenz(currentBase, (num.Length - 1) - i);
-                    result += digitValue;
+                    listOfInts.Add(num % baseNum);
+                    num /= baseNum;
                 }
+                listOfInts.Reverse();
+                return listOfInts.ToArray();
+            }
 
-                // convert to result system
-                // TODO: divide the number
-                // TODO: dictionary for i.e. hexadecimal numbers
-                //       to convert the chars to numbers
-                double remainder = 1;
-                double temp_value = 0;
-                while (remainder != 0)
+            public static string ConvertNumber(int number, int currentBase, int resultBase)
+            { 
+                if (currentBase < resultBase)
                 {
-                    temp_value = number / resultBase;
-                    remainder = number % resultBase;
+                    var result = 0.0;
+                    var intArray = GetIntArray(number, resultBase);
+                    var numberString = number.ToString();
+                    for (int i = 0; i < intArray.Length; i++)
+                    {
+                        Int32 digitValue = intArray[i];
+                        double digitValueDec = digitValue * Mathematik.Potenz(currentBase, (numberString.Length - i - 1));
+                        result += digitValueDec;
+                    }
+                    return result.ToString();
                 }
-
-                return result;
+                else
+                {
+                    var result = "";
+                    while (number > 0)
+                    {
+                        int remainder = number % resultBase;
+                        number = number / resultBase;
+                        result = $"{result}{remainder}";
+                    }
+                    var charArray = result.ToCharArray();
+                    Array.Reverse(charArray);
+                    return new String(charArray);
+                }
             }
         }
 
