@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Linq;
 using Taschenrechner.Classes;
 
 namespace TaschenrechnerUnitTests
@@ -48,6 +49,19 @@ namespace TaschenrechnerUnitTests
             int expected_result = 101;
             int result = InformationTechnology.NumberSystemConverter.ConvertNumber(input_number, 8, 3);
             Assert.That(result == expected_result, $"Expected: {expected_result} but was: {result}");
+        }
+
+        [Test]
+        public void GetIntArray()
+        {
+            int inputVal = 312;
+            int currentBase = 8;
+            var expectedVal = Enumerable.Range(1, 3).ToArray();
+            var result = InformationTechnology.NumberSystemConverter.GetIntArray(inputVal, currentBase);
+            foreach(var i in result)
+            {
+                System.Console.WriteLine(i);
+            }
         }
     }
 }

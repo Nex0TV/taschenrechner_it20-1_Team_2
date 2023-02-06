@@ -20,7 +20,7 @@ namespace Taschenrechner.Classes
             /// <param name="num">Number which will be converted.</param>
             /// <param name="currentBase">Base of the number that is converted.</param>
             /// <returns></returns>
-            private static int[] GetIntArray(int num, int currentBase)
+            public static int[] GetIntArray(int num, int currentBase)
             {
                 List<int> listOfInts = new List<int>();
                 while (num > 0)
@@ -45,7 +45,7 @@ namespace Taschenrechner.Classes
                 number = ConvertToDecimal(number, currentBase);
 
                 number = ConvertToLowerBase(number, resultBase);
-
+                
                 return number;
             }
             /// <summary>
@@ -73,7 +73,6 @@ namespace Taschenrechner.Classes
             /// </summary>
             /// <param name="number">Number to be converted.</param>
             /// <param name="currentBase"></param>
-            /// <param name="resultBase"></param>
             /// <returns></returns>
             private static int ConvertToDecimal(int number, int currentBase)
             { // to decimal
