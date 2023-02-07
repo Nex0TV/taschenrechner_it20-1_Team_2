@@ -52,16 +52,13 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void GetIntArray()
+        public void ConvertToDecimal_Test()
         {
-            int inputVal = 312;
-            int currentBase = 8;
-            var expectedVal = Enumerable.Range(1, 3).ToArray();
-            var result = InformationTechnology.NumberSystemConverter.GetIntArray(inputVal, currentBase);
-            foreach(var i in result)
-            {
-                System.Console.WriteLine(i);
-            }
+            int inputBase = 6;
+            int inputNumber = 12;
+            int expectedResult = 8;
+            int result = InformationTechnology.NumberSystemConverter.ConvertToDecimal(inputNumber, inputBase);
+            Assert.That(result == expectedResult, $"Expected: {expectedResult} but was: {result}");
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Taschenrechner.Classes;
 
 namespace Taschenrechner.Classes
 {
@@ -20,7 +21,7 @@ namespace Taschenrechner.Classes
             /// <param name="num">Number which will be converted.</param>
             /// <param name="currentBase">Base of the number that is converted.</param>
             /// <returns></returns>
-            public static int[] GetIntArray(int num, int currentBase)
+            private static int[] GetIntArray(int num, int currentBase)
             {
                 List<int> listOfInts = new List<int>();
                 while (num > 0)
@@ -31,6 +32,7 @@ namespace Taschenrechner.Classes
                 listOfInts.Reverse();
                 return listOfInts.ToArray();
             }
+
             /// <summary>
             /// Converts a number from a basis to another basis.
             /// </summary>
@@ -41,21 +43,20 @@ namespace Taschenrechner.Classes
 
             public static int ConvertNumber(int number, int currentBase, int resultBase)
             {
-                // TODO: FIX NUMBER CONVERTION : TRY TO CONVERT FIRST TO DECIMAL I WOULD SUGGEST
-                number = ConvertToDecimal(number, currentBase);
+                int decimalBaseNumber = ConvertToDecimal(number, currentBase);
 
-                number = ConvertToLowerBase(number, resultBase);
+                int resultNumber = ConvertToLowerBase(decimalBaseNumber, resultBase);
                 
-                return number;
+                return resultNumber;
             }
             /// <summary>
-            /// Converts a number from a base to a lower base.
+            /// Converts a number from base 10 to a lower base.
             /// </summary>
             /// <param name="number">Number to be converted.</param>
-            /// <param name="resultBase">Result number base, which is higher in value than 'number'.</param>
-            /// <returns></returns>
+            /// <param name="resultBase">Result number base, which is lower in value than base of 'number'.</param>
+            /// <returns>int: Converted number</returns>
             private static int ConvertToLowerBase(int number, int resultBase)
-            { // to decimal
+            {
                 var result = "";
                 while (number > 0)
                 {
@@ -74,21 +75,14 @@ namespace Taschenrechner.Classes
             /// <param name="number">Number to be converted.</param>
             /// <param name="currentBase"></param>
             /// <returns></returns>
-            private static int ConvertToDecimal(int number, int currentBase)
+            public static int ConvertToDecimal(int number, int currentBase)
             { // to decimal
-                var result = 0.0;
-                var intArray = GetIntArray(number, currentBase);
-                foreach(int num in intArray)
+                var intArray = GetIntArray(number, 10);
+                double result = 0;
+                for(int i = 0; i < number.ToString().Length; i++)
                 {
-                    Console.WriteLine(num);
-                }
-                var numberString = number.ToString();
-                for (int i = 0; i < intArray.Length; i++)
-                {
-                    Int32 digitValue = intArray[i];
-                    //double digitValueDec = digitValue * Mathematik.Potenz(currentBase, (numberString.Length - i - 1));
-                    double digitValueDec = digitValue;
-                    result += digitValueDec;
+                    int reverseDigitCount = number.ToString().Length - i - 1;
+                    result += intArray[i] * Mathematik.Potenz(Convert.ToDouble(currentBase),  reverseDigitCount);
                 }
                 return Convert.ToInt32(result);
             }
