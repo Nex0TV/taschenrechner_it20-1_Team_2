@@ -13,7 +13,7 @@ namespace Taschenrechner.Classes
     /// 
     public class InformationTechnology
     {
-        public static class NumberSystemConverter
+        public static class NumberSystem
         {
             /// <summary>
             /// Converts a number into an array with each digit.
@@ -41,7 +41,7 @@ namespace Taschenrechner.Classes
             /// <param name="resultBase">Result number basis after the conversion.</param>
             /// <returns></returns>
 
-            public static int ConvertNumber(int number, int currentBase, int resultBase)
+            public static int Convert(int number, int currentBase, int resultBase)
             {
                 int decimalBaseNumber = ConvertToDecimal(number, currentBase);
 
@@ -67,7 +67,7 @@ namespace Taschenrechner.Classes
                 // Reverse the digit order
                 var charArray = result.ToCharArray();
                 Array.Reverse(charArray);
-                return Convert.ToInt32(new String(charArray));
+                return System.Convert.ToInt32(new String(charArray));
             }
             /// <summary>
             /// Converts a number from a base to a higher base.
@@ -75,22 +75,22 @@ namespace Taschenrechner.Classes
             /// <param name="number">Number to be converted.</param>
             /// <param name="currentBase"></param>
             /// <returns></returns>
-            public static int ConvertToDecimal(int number, int currentBase)
+            private static int ConvertToDecimal(int number, int currentBase)
             { // to decimal
                 var intArray = GetIntArray(number, 10);
                 double result = 0;
                 for(int i = 0; i < number.ToString().Length; i++)
                 {
                     int reverseDigitCount = number.ToString().Length - i - 1;
-                    result += intArray[i] * Mathematik.Potenz(Convert.ToDouble(currentBase),  reverseDigitCount);
+                    result += intArray[i] * Mathematik.Potenz(System.Convert.ToDouble(currentBase),  reverseDigitCount);
                 }
-                return Convert.ToInt32(result);
+                return System.Convert.ToInt32(result);
             }
         }
 
         public static class VideoSizeCalculator
         {
-            public static double CalculateVideoSize(int colorDepth = 0,
+            public static double Calculate(int colorDepth = 0,
                                                     int channels = 0,
                                                     int width = 0,
                                                     int height = 0,
