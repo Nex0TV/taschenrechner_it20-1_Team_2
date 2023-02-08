@@ -6,14 +6,6 @@ namespace TaschenrechnerUnitTests
 {
     public class InformationTechnologyTest
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
-        //
-        // InformationTechnology.PrefixCalculator
-        //
         [Test]
         public void Calculate_BinaryToDecimal_ReturnRightValue()
         {

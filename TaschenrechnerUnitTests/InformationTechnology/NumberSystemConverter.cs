@@ -7,7 +7,7 @@ namespace TaschenrechnerUnitTests
     class NumberSystemConverter
     {
         [Test]
-        public void Convert_110FromBinaryToDecimal_Return6()
+        public void ConvertFromBinaryToDecimalReturnTrueCase1()
         {
             int input_number = 110;
             int expected_result = 6;
@@ -16,7 +16,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Convert_6FromDecimalToBinary_Return110()
+        public void ConvertFromDecimalToBinaryReturnTrueCase1()
         {
             int input_number = 6;
             int expected_result = 110;
@@ -25,7 +25,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Convert_14FromOctalToDecimal_Return12()
+        public void ConvertFromOctalToDecimalReturnTrueCase1()
         {
             int input_number = 14;
             int expected_result = 12;
@@ -34,7 +34,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Convert_122FromTernaryToOctal_Return21()
+        public void ConvertFromTernaryToOctalReturnTrueCase1()
         {
             int input_number = 122;
             int expected_result = 21;
@@ -43,7 +43,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Convert_12FromOctalToTrenary_Return101()
+        public void ConvertFromOctalToTrenaryReturnTrueCase1()
         {
             int input_number = 12;
             int expected_result = 101;

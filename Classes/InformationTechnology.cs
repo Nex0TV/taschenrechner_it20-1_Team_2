@@ -90,13 +90,14 @@ namespace Taschenrechner.Classes
 
         public static class VideoSizeCalculator
         {
-            public static double Calculate(int colorDepth = 0,
-                                                    int channels = 0,
-                                                    int width = 0,
-                                                    int height = 0,
-                                                    int fps = 0,
-                                                    int videoLength = 0,
-                                                    int imageSize = 0
+            public static double Calculate(
+                int colorDepth = 0, 
+                int channels = 0,
+                int width = 0,
+                int height = 0,
+                int fps = 0,
+                int videoLength = 0,
+                int imageSize = 0
                 )
             {
                 if (imageSize == 0)
@@ -109,11 +110,12 @@ namespace Taschenrechner.Classes
 
         public class PrefixCalculator
         {
-            private static double Calculate(double number,
-                                   bool toLower = false,
-                                   bool binary = false,
-                                   int iterations = 0
-                                   )
+            private static double Calculate(
+                double number,
+                bool toLower = false,
+                bool binary = false,
+                int iterations = 0
+                )
             {
                 // string toPrefix = useStartPrefix ? this.StartPrefix : this.ResultPrefix;
                 double divider = binary ? 1024 : 1_000;
