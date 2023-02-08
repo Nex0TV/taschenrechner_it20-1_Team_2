@@ -11,7 +11,7 @@ namespace Taschenrechner.Classes
     /// Contains Classes for different 
     /// </summary>
     /// 
-    public class InformationTechnology
+    public static class InformationTechnology
     {
         public static class NumberSystem
         {
