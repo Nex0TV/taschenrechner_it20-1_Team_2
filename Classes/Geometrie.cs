@@ -40,46 +40,46 @@ namespace Taschenrechner.Classes
         /// <summary>
         /// Calculates the area of a triangle
         /// </summary>
-        /// <param name="seitec">Side c of a triangle</param>
+        /// <param name="seiteC">Side c of a triangle</param>
         /// <param name="hoehec">Height of side c of a triangle</param>
         /// <returns>Area</returns>
-        public static float DreieckFlaeche (float seitec, float hoehec)
+        public static float DreieckFlaeche (float seiteC, float hoehec)
         {
-            return seitec * hoehec / 2;
+            return seiteC * hoehec / 2;
         }
 
         /// <summary>
         /// Calculates the perimeter of a triangle
         /// </summary>
-        /// <param name="seitea">Side a</param>
-        /// <param name="seiteb">Side b</param>
-        /// <param name="seitec">Side c</param>
+        /// <param name="seiteA">Side a</param>
+        /// <param name="seiteB">Side b</param>
+        /// <param name="seiteC">Side c</param>
         /// <returns>Triangle perimeter</returns>
-        public static float DreieckUmfang (float seitea, float seiteb, float seitec)
+        public static float DreieckUmfang (float seiteA, float seiteB, float seiteC)
         {
-            return seitea + seiteb + seitec;
+            return seiteA + seiteB + seiteC;
         }
 
         /// <summary>
         /// Calculates the perimeter of a parallelogram
         /// </summary>
-        /// <param name="seitea">Side a</param>
-        /// <param name="seiteb">Side b</param>
+        /// <param name="seiteA">Side a</param>
+        /// <param name="seiteB">Side b</param>
         /// <returns>Parallelogram circumference</returns>
-        public static float ParallelogrammUmfang (float seitea, float seiteb)
+        public static float ParallelogrammUmfang (float seiteA, float seiteB)
         {
-            return (seitea + seiteb) * 2;
+            return (seiteA + seiteB) * 2;
         }
 
         /// <summary>
         /// Calculates the area of a parallelogram
         /// </summary>
-        /// <param name="seiteb">Side b</param>
-        /// <param name="hoeheb">Height of side b</param>
+        /// <param name="seiteB">Side b</param>
+        /// <param name="hoeheB">Height of side b</param>
         /// <returns></returns>
-        public static float ParallelogrammFlaeche (float seiteb, float hoeheb)
+        public static float ParallelogrammFlaeche (float seiteB, float hoeheB)
         {
-            return seiteb * hoeheb;
+            return seiteB * hoeheB;
         }
     }
 }
