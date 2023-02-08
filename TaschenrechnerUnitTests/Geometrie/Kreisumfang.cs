@@ -4,7 +4,7 @@ using Taschenrechner.Classes;
 namespace TaschenrechnerUnitTests
 
 {
-    public class Kreisumfang
+    public class KreisUmfang
     {
         [SetUp]
         public void Setup()
@@ -14,7 +14,7 @@ namespace TaschenrechnerUnitTests
         [Test]
         public void Input_0()
         {
-            float result = Geometrie.Kreisumfang(10.4432f);
+            float result = Geometrie.KreisUmfang(10.4432f);
             Assert.That(result == 32.80828f, "Ergibt nicht 32.80828, sondern: " + result);
         }
     }

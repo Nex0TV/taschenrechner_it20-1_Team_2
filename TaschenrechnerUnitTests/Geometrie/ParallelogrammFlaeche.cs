@@ -4,7 +4,7 @@ using Taschenrechner.Classes;
 namespace TaschenrechnerUnitTests
 
 {
-    public class KreisFlaeche
+    public class ParallelogrammFlaeche
     {
         [SetUp]
         public void Setup()
@@ -14,8 +14,8 @@ namespace TaschenrechnerUnitTests
         [Test]
         public void Input_0()
         {
-            float result = Geometrie.KreisFlaeche(10.4432f);
-            Assert.That(result == 85.65586f, "Ergibt nicht 85.65586, sondern: " + result);
+            float result = Geometrie.ParallelogrammFlaeche(10, 6);
+            Assert.That(result == 60f, "Ergibt nicht 60, sondern: " + result);
         }
     }
 }

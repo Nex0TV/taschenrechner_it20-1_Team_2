@@ -9,33 +9,33 @@ namespace Taschenrechner.Classes
     {
         private const float Pi = 3.141592653f;
 
-        public static float Kreisumfang (float durchmesser)
+        public static float KreisUmfang (float durchmesser)
         {
             return durchmesser * Pi;
         }
 
-        public static float Kreisflaeche (float durchmesser)
+        public static float KreisFlaeche (float durchmesser)
         {
             float radius = durchmesser / 2;
             return radius * radius * Pi;
         }
 
-        public static float Dreieckflaeche (float seitec, float hoehec)
+        public static float DreieckFlaeche (float seitec, float hoehec)
         {
             return seitec * hoehec / 2;
         }
 
-        public static float Dreieckumfang (float seitea, float seiteb, float seitec)
+        public static float DreieckUmfang (float seitea, float seiteb, float seitec)
         {
             return seitea + seiteb + seitec;
         }
 
-        public static float Paralellogramumfang (float seitea, float seiteb)
+        public static float ParallelogrammUmfang (float seitea, float seiteb)
         {
             return (seitea + seiteb) * 2;
         }
 
-        public static float Parallelogrammflaecheninhalt (float seiteb, float hoeheb)
+        public static float ParallelogrammFlaeche (float seiteb, float hoeheb)
         {
             return seiteb * hoeheb;
         }
