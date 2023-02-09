@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Geometrie.cs" />
     <Compile Include="Classes\Mathematik.cs" />
     <Compile Include="Classes\Prozentrechnung.cs" />
     <Compile Include="FormSettings.cs">
