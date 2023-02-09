@@ -6,13 +6,8 @@ namespace TaschenrechnerUnitTests
 {
     public class Primzahlen
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
-        public void Input_n13_1()
+        public void primeNumberNegativ()
         {
             int[] result = Mathematik.Primzahlen(-13, 1);
             int[] expected = new int[0];
@@ -20,7 +15,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Input_n1_20()
+        public void primeNumberNegativTwo()
         {
             int[] result = Mathematik.Primzahlen(-1, 20);
             int[] expected = new int[8] { 2, 3, 5, 7, 11, 13, 17, 19 };
@@ -28,7 +23,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Input_1_5()
+        public void primeNumberOneToFive()
         {
             int[] result = Mathematik.Primzahlen(1, 5);
             int[] expected = new int[3] { 2, 3, 5 };
@@ -36,7 +31,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Input_3_122()
+        public void primeNumberPositiv()
         {
             int[] result = Mathematik.Primzahlen(3, 122);
             int[] expected = new int[29] { 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113 };
@@ -44,7 +39,7 @@ namespace TaschenrechnerUnitTests
         }
 
         [Test]
-        public void Input_50_100()
+        public void primeNumberPositivTwo()
         {
             int[] result = Mathematik.Primzahlen(50, 100);
             int[] expected = new int[10] { 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 };

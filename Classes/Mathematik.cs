@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace Taschenrechner.Classes
 {
+    /// <summary>
+    /// Mathematic Class
+    /// </summary>
     public class Mathematik
     {
+        /// <summary>
+        /// calculate faculty of number
+        /// </summary>
+        /// <param name="zahl">number</param>
+        /// <returns>faculty of zahl</returns>
         public static int Fakultaet(int zahl)
         {
             int ergebnis = 1;
@@ -22,6 +30,12 @@ namespace Taschenrechner.Classes
             return ergebnis;
         }
 
+        /// <summary>
+        /// calculate potency of number
+        /// </summary>
+        /// <param name="zahl">number</param>
+        /// <param name="exponent">exponent</param>
+        /// <returns>potenz</returns>
         public static double Potenz(double zahl, int exponent)
         {
             double ergebnis = 1;
@@ -34,6 +48,12 @@ namespace Taschenrechner.Classes
             return ergebnis;
         }
 
+        /// <summary>
+        /// fraction calculation
+        /// </summary>
+        /// <param name="zaehler">numerator </param>
+        /// <param name="nenner">denominator</param>
+        /// <returns>fraction</returns>
         public static double Bruch(int zaehler, int nenner)
         {
             if(nenner != 0)
@@ -47,6 +67,11 @@ namespace Taschenrechner.Classes
             }
         }
 
+        /// <summary>
+        /// square root
+        /// </summary>
+        /// <param name="zahl">number</param>
+        /// <returns>square root of number</returns>
         public static double Wurzel(double zahl)
         {
             double x = 1;
@@ -54,11 +79,17 @@ namespace Taschenrechner.Classes
             do
             {
                 x = (x + zahl / x) / 2;
-            } while ((x * x).ToString("F6") != zahl.ToString("F6"));
+            }
+            while ((x * x).ToString("F6") != zahl.ToString("F6"));
 
             return Convert.ToDouble(x.ToString("F6"));
         }
 
+        /// <summary>
+        /// test number if it is prime number
+        /// </summary>
+        /// <param name="zahl">number</param>
+        /// <returns>true or false</returns>
         private static bool IstPrimzahl(int zahl)
         {
             if(zahl <= 1)
@@ -76,6 +107,12 @@ namespace Taschenrechner.Classes
             return true;
         }
 
+        /// <summary>
+        /// Get prime numbers of an list of numbers
+        /// </summary>
+        /// <param name="startzahl">first number</param>
+        /// <param name="endzahl">last number</param>
+        /// <returns></returns>
         public static int[] Primzahlen(int startzahl, int endzahl)
         {
 
