@@ -17,6 +17,10 @@ namespace Taschenrechner.Classes
                 ergebnis = ((psatz / 100) * grundwert) + grundwert;
                 
             }
+          else
+            {
+                ergebnis = grundwert;
+            }
             return ergebnis;
        
         }
@@ -30,32 +34,34 @@ namespace Taschenrechner.Classes
                 ergebnis = grundwert - ((prozentsatz / 100) * grundwert);
 
             }
+            else
+            {
+                ergebnis = grundwert;
+            }
             return ergebnis;
 
         }
 
         public static double Nettopreis(double bruttopreis)
         {
-            if(bruttopreis == 0)
+            double ergebnis = 0;
+
+            if (bruttopreis != 0)
             {
-                return 1;
+               ergebnis = bruttopreis * 0.81;
             }
-            else
-            {
-                double ergebnis = bruttopreis * 0.81;
-                return ergebnis;
-            }
+            return ergebnis;
         }
 
         public static double Bruttopreis(double nettopreis)
         {
             if(nettopreis == 0)
             {
-                return 1;
+                return 0;
             }
             else
             {
-                double ergebnis = nettopreis * 1.19;
+                double ergebnis = nettopreis * 100/119;
                 return ergebnis;
             }
         }
@@ -67,6 +73,10 @@ namespace Taschenrechner.Classes
             {
                 ergebnis = (prozentwert / grundwert) * 100;
 
+            }
+            else
+            {
+                ergebnis = -1;
             }
             return ergebnis;
 
