@@ -67,5 +67,37 @@ namespace Taschenrechner.Model
 
             return result;
         }
+
+        public static string get_calculations(string input)
+        {
+            var result = 0.0;
+            var opening_pos = 0;
+            var closing_pos = 0;
+            closing_pos = input.IndexOf(")");
+            opening_pos = input.Substring(0, closing_pos).LastIndexOf("(");
+            
+            while (opening_pos != -1)
+            {
+                var substring = input.Substring(opening_pos + 1, closing_pos - opening_pos - 1);
+                var result2 = BasicCalculator.calculate_point(substring);
+                input = input.Substring(0, opening_pos) + result2 + input.Substring(closing_pos, input.Length - closing_pos);
+            }
+
+            return input;
+        }
+
+        public static double calculate_point(string input)
+        {
+            var result = 0.0;
+            var numbers = new List<string>(input.Split(' '));
+            while (numbers.FindIndex(x => x.Equals("*")) == -1)
+            {
+                var i = input.IndexOf("*");
+                result = input[i - 1] * input[i + 1];
+                numbers = numbers // TODO: Berechnung Punkt (*, /) und danach + und -
+            }
+            
+            return result;
+        }
     }
 }
