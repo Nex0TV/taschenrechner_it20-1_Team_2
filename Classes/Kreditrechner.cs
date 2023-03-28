@@ -25,6 +25,8 @@ namespace Taschenrechner.Classes
             {
                 this.LoanRate = loan / runtime;
             }
+
+
         }
 
         public static double zinssatz(double zinssatz)
@@ -68,7 +70,7 @@ namespace Taschenrechner.Classes
             return gesamtZinsen;
         }
 
-        public Dictionary<string, object> berechneKredit(double kreditsumme, double laufzeit, double zinssatz)
+        public static Dictionary<string, object> berechneKredit(double kreditsumme, double laufzeit, double zinssatz)
         {
             Dictionary<string, object> data = new Dictionary<string, object>();
             double _tilgung = tilgung(kreditsumme, laufzeit);
@@ -91,65 +93,10 @@ namespace Taschenrechner.Classes
                 data.Add("Restschuld", kreditsumme );
                 data.Add("Zinsen gesamt", gesamtZins);
             }
-
+            Console.WriteLine(data);
             return data;
         }
     }
-
-    public class Kreditrechner
-    {
-            // zinsen
-            //public static List<Dictionary<string, object>> Ratenkredit (double kreditsumme, int laufzeit, double zinssatz) {
-
-            //var data = [arr, arr2];
-            //double kredit = kreditsumme;
-
-            //double tilgung = kreditsumme / laufzeit;
-            //double laufzeitMonate = laufzeit * 12;
-
-            //double gesamtZins = 0;
-
-            //int jahr = 1;
-
-            //System.Text.RegularExpressions.Regex percentage_pattern = new System.Text.RegularExpressions.Regex(@"^(\d+|(\.\d+))(\.\d+)?%$");
-
-            //if (!percentage_pattern.IsMatch(zinssatz.ToString()))
-            //{
-            //    zinssatz = zinssatz / 100;
-            //}
-
-            //for (int i = 0; i < laufzeit; i++)
-            //{
-            //double zins = kreditsumme * zinssatz;
-
-            //double annuitaet = tilgung + zins;
-
-            /* kreditsumme = kreditsumme - tilgung*/
-
-
-            //gesamtZins += zins;
-
-            //data.Add(new Dictionary<string, object>
-            //{
-            //    { "Gesamtbetrag", kredit },
-            //    { "Zins", zins },
-            //    { "Tilgung", tilgung },
-            //    { "Annuitaet", annuitaet },
-            //    { "Restschuld", kreditsumme },
-            //    { "Zinsen gesamt", gesamtZins },
-            //    { "Annuität gesamt", gesamtAnnuitaet }
-            //});
-
-            //    jahr++;
-            //}
-
-
-            // Display the result on the form or in a data grid
-            //return data;
-            //}
-
-
-        }
 }
 
 
