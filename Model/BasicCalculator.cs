@@ -9,95 +9,79 @@ namespace Taschenrechner.Model
 {
     public class BasicCalculator
     {
-        public static string parseCalculationInput(string inputValue)
+        public static string CalculateString(string input)
         {
-            bool isBracket = false;
-
-            string[] currentResult = new string[] { };
-
-            double[] subtotalBrackets = new double[100];
-            double[] subtotalPoints = { };
-            double[] subtotalLines = { };
-
-            char[] delimiterChars = { '+', '-', '*', '/' };
-
-            var regex = @"([*+/\-)(])|([0-9,0-9]+)";
-
-            var count = 0;
-
-            // dot is set? replace with comma
-            inputValue = inputValue.Replace(".", ",");
-
-            foreach (var match in Regex.Matches(inputValue, regex))
-            {
-                currentResult = new List<string>(currentResult) { match.ToString() }.ToArray();
-            }
-
-
-            for (var i = 0; i < currentResult.Length; i++)
-            {
-                Console.WriteLine(currentResult[i]);
-            }
-
-            return inputValue;
-        }
-
-
-        public static double Calculate (string value)
-        {
-            double result = 0;
-            
-            char[] delimiterChars = { '+', '-', '*', '/' };
-
-            string[] splitValues = parseCalculationInput(value).Split(delimiterChars);
-
-            
-
-            // check if given delimitier if basic calculation is possible
-            for (int i = 0; i < splitValues.Length; i++)
-            {
-                Console.WriteLine(splitValues[i]);
-                //return result;
-            }
-
-            // initialize necessary variables to calculate
-            //double result = 0;
-
-            //Convert.ToDouble(value));
-
-            return result;
-        }
-
-        public static string get_calculations(string input)
-        {
-            var result = 0.0;
-            var opening_pos = 0;
-            var closing_pos = 0;
+            int opening_pos = -1;
+            int closing_pos;
             closing_pos = input.IndexOf(")");
-            opening_pos = input.Substring(0, closing_pos).LastIndexOf("(");
-            
-            while (opening_pos != -1)
+            if (closing_pos != -1)
+            {
+                opening_pos = input.Substring(0, closing_pos).LastIndexOf("(");
+            }
+            // Calculate the bracktes:
+            if (closing_pos != -1)
             {
                 var substring = input.Substring(opening_pos + 1, closing_pos - opening_pos - 1);
-                var result2 = BasicCalculator.calculate_point(substring);
-                input = input.Substring(0, opening_pos) + result2 + input.Substring(closing_pos, input.Length - closing_pos);
+                var result2 = CalculateWithoutBrackets(substring);
+                input = input.Substring(0, opening_pos) + result2 + input.Substring(closing_pos + 1, input.Length - closing_pos - 1);
+                input = CalculateString(input);
             }
-
+            // Calculate outside the bracktes:
+            input = CalculateWithoutBrackets(input).ToString();
             return input;
         }
 
-        public static double calculate_point(string input)
+        public static double CalculateWithoutBrackets(string input)
         {
-            var result = 0.0;
+            double result = 0.0;
+            var point_operators = "*/";
+            var dash_operators = "+-";
             var numbers = new List<string>(input.Split(' '));
-            while (numbers.FindIndex(x => x.Equals("*")) == -1)
-            {
-                var i = input.IndexOf("*");
-                result = input[i - 1] * input[i + 1];
-                numbers = numbers // TODO: Berechnung Punkt (*, /) und danach + und -
-            }
-            
+            if (numbers.Count == 1) return Convert.ToDouble(input);
+            result = CalculateList(result, point_operators, numbers); // the list "numbers" is modified during the process
+            result = CalculateList(result, dash_operators, numbers);
             return result;
         }
+
+        /// <summary>
+        /// Finds the given operatoes in a string and calculates the number before and after it together.
+        /// You should call this method twice to do points calculations before dash calculations.
+        /// </summary>
+        /// <param name="result">If you got a result before.</param>
+        /// <param name="operators">String containing the operators.</param>
+        /// <param name="numbers">List of numbers, it will be manipulated during the process.</param>
+        /// <returns></returns>
+        public static double CalculateList(double result, string operators, List<string> numbers)
+        {
+            foreach (char _operator in operators)
+            {
+                while (numbers.FindIndex(x => x.Equals(_operator.ToString())) != -1)
+                {
+                    var i = numbers.IndexOf(_operator.ToString());
+                    switch (_operator)
+                    {
+                        case '*':
+                            result = Convert.ToInt32(numbers[i - 1]) * Convert.ToInt32(numbers[i + 1]);
+                            break;
+                        case '/':
+                            result = Convert.ToInt32(numbers[i - 1]) / Convert.ToInt32(numbers[i + 1]);
+                            break;
+                        case '+':
+                            result = Convert.ToInt32(numbers[i - 1]) + Convert.ToInt32(numbers[i + 1]);
+                            break;
+                        case '-':
+                            result = Convert.ToInt32(numbers[i - 1]) - Convert.ToInt32(numbers[i + 1]);
+                            break;
+                    }
+
+                    numbers[i - 1] = result.ToString(); // replace first operator with result
+                    numbers.RemoveAt(i); // remove arithmetic sign
+                    numbers.RemoveAt(i); // remove second operator
+                }
+            }
+
+            return result;
+        }
+
     }
 }
