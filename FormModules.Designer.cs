@@ -41,9 +41,10 @@ namespace Taschenrechner
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(314, 29);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label1.Location = new System.Drawing.Point(259, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 13);
+            this.label1.Size = new System.Drawing.Size(289, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bitte wählen Sie eine Branche aus:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -66,6 +67,7 @@ namespace Taschenrechner
             this.loanCalc.TabIndex = 2;
             this.loanCalc.Text = "Kreditberechnung";
             this.loanCalc.UseVisualStyleBackColor = true;
+            this.loanCalc.Click += new System.EventHandler(this.loanCalc_Click);
             // 
             // gemeotryCalc
             // 
@@ -75,6 +77,7 @@ namespace Taschenrechner
             this.gemeotryCalc.TabIndex = 3;
             this.gemeotryCalc.Text = "Geometrie";
             this.gemeotryCalc.UseVisualStyleBackColor = true;
+            this.gemeotryCalc.Click += new System.EventHandler(this.gemeotryCalc_Click);
             // 
             // btnMathCalc
             // 
@@ -94,6 +97,7 @@ namespace Taschenrechner
             this.schoolMarkCalc.TabIndex = 5;
             this.schoolMarkCalc.Text = "Schule";
             this.schoolMarkCalc.UseVisualStyleBackColor = true;
+            this.schoolMarkCalc.Click += new System.EventHandler(this.schoolMarkCalc_Click);
             // 
             // informationTechCalc
             // 
@@ -103,6 +107,7 @@ namespace Taschenrechner
             this.informationTechCalc.TabIndex = 6;
             this.informationTechCalc.Text = "Informationstechnik";
             this.informationTechCalc.UseVisualStyleBackColor = true;
+            this.informationTechCalc.Click += new System.EventHandler(this.informationTechCalc_Click);
             // 
             // FormModules
             // 

@@ -41,9 +41,10 @@ namespace Taschenrechner
             // lblSchoolMark
             // 
             this.lblSchoolMark.AutoSize = true;
-            this.lblSchoolMark.Location = new System.Drawing.Point(13, 13);
+            this.lblSchoolMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lblSchoolMark.Location = new System.Drawing.Point(12, 9);
             this.lblSchoolMark.Name = "lblSchoolMark";
-            this.lblSchoolMark.Size = new System.Drawing.Size(40, 13);
+            this.lblSchoolMark.Size = new System.Drawing.Size(65, 22);
             this.lblSchoolMark.TabIndex = 0;
             this.lblSchoolMark.Text = "Schule";
             // 
@@ -58,36 +59,36 @@ namespace Taschenrechner
             // 
             // btnAverageMark
             // 
-            this.btnAverageMark.Location = new System.Drawing.Point(16, 153);
+            this.btnAverageMark.Location = new System.Drawing.Point(16, 200);
             this.btnAverageMark.Name = "btnAverageMark";
-            this.btnAverageMark.Size = new System.Drawing.Size(187, 44);
+            this.btnAverageMark.Size = new System.Drawing.Size(119, 44);
             this.btnAverageMark.TabIndex = 2;
             this.btnAverageMark.Text = "Notendurchschnitt";
             this.btnAverageMark.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 203);
+            this.button1.Location = new System.Drawing.Point(16, 250);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 44);
+            this.button1.Size = new System.Drawing.Size(251, 44);
             this.button1.TabIndex = 3;
             this.button1.Text = "Zeugnissnotenempfehlung";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // btnMarkNumber
             // 
-            this.btnMarkNumber.Location = new System.Drawing.Point(16, 253);
+            this.btnMarkNumber.Location = new System.Drawing.Point(141, 200);
             this.btnMarkNumber.Name = "btnMarkNumber";
-            this.btnMarkNumber.Size = new System.Drawing.Size(187, 44);
+            this.btnMarkNumber.Size = new System.Drawing.Size(126, 44);
             this.btnMarkNumber.TabIndex = 4;
             this.btnMarkNumber.Text = "Notenzahl";
             this.btnMarkNumber.UseVisualStyleBackColor = true;
             // 
             // btnCloseBasicCalc
             // 
-            this.btnCloseBasicCalc.Location = new System.Drawing.Point(537, 402);
+            this.btnCloseBasicCalc.Location = new System.Drawing.Point(141, 402);
             this.btnCloseBasicCalc.Name = "btnCloseBasicCalc";
-            this.btnCloseBasicCalc.Size = new System.Drawing.Size(251, 36);
+            this.btnCloseBasicCalc.Size = new System.Drawing.Size(126, 36);
             this.btnCloseBasicCalc.TabIndex = 14;
             this.btnCloseBasicCalc.Text = "Grundrechner schließen";
             this.btnCloseBasicCalc.UseVisualStyleBackColor = true;
@@ -96,7 +97,7 @@ namespace Taschenrechner
             // 
             this.btnChooseModules.Location = new System.Drawing.Point(16, 402);
             this.btnChooseModules.Name = "btnChooseModules";
-            this.btnChooseModules.Size = new System.Drawing.Size(251, 36);
+            this.btnChooseModules.Size = new System.Drawing.Size(119, 36);
             this.btnChooseModules.TabIndex = 13;
             this.btnChooseModules.Text = "Rechenmodul auswählen";
             this.btnChooseModules.UseVisualStyleBackColor = true;
@@ -105,7 +106,7 @@ namespace Taschenrechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(284, 450);
             this.Controls.Add(this.btnCloseBasicCalc);
             this.Controls.Add(this.btnChooseModules);
             this.Controls.Add(this.btnMarkNumber);

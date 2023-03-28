@@ -41,9 +41,10 @@ namespace Taschenrechner
             // lblGeometry
             // 
             this.lblGeometry.AutoSize = true;
-            this.lblGeometry.Location = new System.Drawing.Point(13, 13);
+            this.lblGeometry.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lblGeometry.Location = new System.Drawing.Point(99, 9);
             this.lblGeometry.Name = "lblGeometry";
-            this.lblGeometry.Size = new System.Drawing.Size(55, 13);
+            this.lblGeometry.Size = new System.Drawing.Size(93, 22);
             this.lblGeometry.TabIndex = 0;
             this.lblGeometry.Text = "Geometrie";
             // 
@@ -60,34 +61,34 @@ namespace Taschenrechner
             // 
             this.btnCircle.Location = new System.Drawing.Point(16, 169);
             this.btnCircle.Name = "btnCircle";
-            this.btnCircle.Size = new System.Drawing.Size(251, 40);
+            this.btnCircle.Size = new System.Drawing.Size(128, 40);
             this.btnCircle.TabIndex = 2;
             this.btnCircle.Text = "Kreis";
             this.btnCircle.UseVisualStyleBackColor = true;
             // 
             // btnTriangle
             // 
-            this.btnTriangle.Location = new System.Drawing.Point(16, 215);
+            this.btnTriangle.Location = new System.Drawing.Point(150, 169);
             this.btnTriangle.Name = "btnTriangle";
-            this.btnTriangle.Size = new System.Drawing.Size(251, 40);
+            this.btnTriangle.Size = new System.Drawing.Size(121, 40);
             this.btnTriangle.TabIndex = 3;
             this.btnTriangle.Text = "Dreieck";
             this.btnTriangle.UseVisualStyleBackColor = true;
             // 
             // btnParallelogram
             // 
-            this.btnParallelogram.Location = new System.Drawing.Point(16, 261);
+            this.btnParallelogram.Location = new System.Drawing.Point(16, 215);
             this.btnParallelogram.Name = "btnParallelogram";
-            this.btnParallelogram.Size = new System.Drawing.Size(251, 40);
+            this.btnParallelogram.Size = new System.Drawing.Size(255, 40);
             this.btnParallelogram.TabIndex = 4;
             this.btnParallelogram.Text = "Parallelogramm";
             this.btnParallelogram.UseVisualStyleBackColor = true;
             // 
             // btnCloseBasicCalc
             // 
-            this.btnCloseBasicCalc.Location = new System.Drawing.Point(537, 402);
+            this.btnCloseBasicCalc.Location = new System.Drawing.Point(150, 402);
             this.btnCloseBasicCalc.Name = "btnCloseBasicCalc";
-            this.btnCloseBasicCalc.Size = new System.Drawing.Size(251, 36);
+            this.btnCloseBasicCalc.Size = new System.Drawing.Size(121, 36);
             this.btnCloseBasicCalc.TabIndex = 12;
             this.btnCloseBasicCalc.Text = "Grundrechner schließen";
             this.btnCloseBasicCalc.UseVisualStyleBackColor = true;
@@ -96,7 +97,7 @@ namespace Taschenrechner
             // 
             this.btnChooseModules.Location = new System.Drawing.Point(16, 402);
             this.btnChooseModules.Name = "btnChooseModules";
-            this.btnChooseModules.Size = new System.Drawing.Size(251, 36);
+            this.btnChooseModules.Size = new System.Drawing.Size(128, 36);
             this.btnChooseModules.TabIndex = 11;
             this.btnChooseModules.Text = "Rechenmodul auswählen";
             this.btnChooseModules.UseVisualStyleBackColor = true;
@@ -105,7 +106,7 @@ namespace Taschenrechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(283, 450);
             this.Controls.Add(this.btnCloseBasicCalc);
             this.Controls.Add(this.btnChooseModules);
             this.Controls.Add(this.btnParallelogram);

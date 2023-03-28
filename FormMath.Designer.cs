@@ -45,53 +45,54 @@ namespace Taschenrechner
             // 
             this.lblMathCalc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMathCalc.AutoSize = true;
-            this.lblMathCalc.Location = new System.Drawing.Point(13, 13);
+            this.lblMathCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lblMathCalc.Location = new System.Drawing.Point(29, 21);
             this.lblMathCalc.Name = "lblMathCalc";
-            this.lblMathCalc.Size = new System.Drawing.Size(135, 13);
+            this.lblMathCalc.Size = new System.Drawing.Size(224, 22);
             this.lblMathCalc.TabIndex = 0;
             this.lblMathCalc.Text = "Mathematische Funktionen";
             // 
             // btnFactorial
             // 
-            this.btnFactorial.Location = new System.Drawing.Point(12, 106);
+            this.btnFactorial.Location = new System.Drawing.Point(12, 195);
             this.btnFactorial.Name = "btnFactorial";
-            this.btnFactorial.Size = new System.Drawing.Size(251, 36);
+            this.btnFactorial.Size = new System.Drawing.Size(122, 36);
             this.btnFactorial.TabIndex = 1;
             this.btnFactorial.Text = "Fakultät";
             this.btnFactorial.UseVisualStyleBackColor = true;
             // 
             // btnSquareRoot
             // 
-            this.btnSquareRoot.Location = new System.Drawing.Point(12, 148);
+            this.btnSquareRoot.Location = new System.Drawing.Point(140, 195);
             this.btnSquareRoot.Name = "btnSquareRoot";
-            this.btnSquareRoot.Size = new System.Drawing.Size(251, 36);
+            this.btnSquareRoot.Size = new System.Drawing.Size(122, 36);
             this.btnSquareRoot.TabIndex = 2;
             this.btnSquareRoot.Text = "Quadratwurzel";
             this.btnSquareRoot.UseVisualStyleBackColor = true;
             // 
             // btnPower
             // 
-            this.btnPower.Location = new System.Drawing.Point(12, 190);
+            this.btnPower.Location = new System.Drawing.Point(12, 237);
             this.btnPower.Name = "btnPower";
-            this.btnPower.Size = new System.Drawing.Size(251, 36);
+            this.btnPower.Size = new System.Drawing.Size(122, 36);
             this.btnPower.TabIndex = 3;
             this.btnPower.Text = "Potenzfunktion";
             this.btnPower.UseVisualStyleBackColor = true;
             // 
             // btnPrimeNum
             // 
-            this.btnPrimeNum.Location = new System.Drawing.Point(12, 232);
+            this.btnPrimeNum.Location = new System.Drawing.Point(12, 279);
             this.btnPrimeNum.Name = "btnPrimeNum";
-            this.btnPrimeNum.Size = new System.Drawing.Size(251, 36);
+            this.btnPrimeNum.Size = new System.Drawing.Size(122, 36);
             this.btnPrimeNum.TabIndex = 4;
             this.btnPrimeNum.Text = "Primzahlen zwischen Grenzwerten";
             this.btnPrimeNum.UseVisualStyleBackColor = true;
             // 
             // btnVulgarFraction
             // 
-            this.btnVulgarFraction.Location = new System.Drawing.Point(12, 316);
+            this.btnVulgarFraction.Location = new System.Drawing.Point(140, 279);
             this.btnVulgarFraction.Name = "btnVulgarFraction";
-            this.btnVulgarFraction.Size = new System.Drawing.Size(251, 36);
+            this.btnVulgarFraction.Size = new System.Drawing.Size(124, 36);
             this.btnVulgarFraction.TabIndex = 6;
             this.btnVulgarFraction.Text = "Gemeiner Bruch";
             this.btnVulgarFraction.UseVisualStyleBackColor = true;
@@ -100,16 +101,16 @@ namespace Taschenrechner
             // 
             this.btnChooseModules.Location = new System.Drawing.Point(12, 402);
             this.btnChooseModules.Name = "btnChooseModules";
-            this.btnChooseModules.Size = new System.Drawing.Size(251, 36);
+            this.btnChooseModules.Size = new System.Drawing.Size(122, 36);
             this.btnChooseModules.TabIndex = 7;
             this.btnChooseModules.Text = "Rechenmodul auswählen";
             this.btnChooseModules.UseVisualStyleBackColor = true;
             // 
             // btnCloseBasicCalc
             // 
-            this.btnCloseBasicCalc.Location = new System.Drawing.Point(537, 402);
+            this.btnCloseBasicCalc.Location = new System.Drawing.Point(140, 402);
             this.btnCloseBasicCalc.Name = "btnCloseBasicCalc";
-            this.btnCloseBasicCalc.Size = new System.Drawing.Size(251, 36);
+            this.btnCloseBasicCalc.Size = new System.Drawing.Size(123, 36);
             this.btnCloseBasicCalc.TabIndex = 8;
             this.btnCloseBasicCalc.Text = "Grundrechner schließen";
             this.btnCloseBasicCalc.UseVisualStyleBackColor = true;
@@ -117,7 +118,7 @@ namespace Taschenrechner
             // lblResult
             // 
             this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(13, 54);
+            this.lblResult.Location = new System.Drawing.Point(13, 91);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(51, 13);
             this.lblResult.TabIndex = 9;
@@ -125,9 +126,9 @@ namespace Taschenrechner
             // 
             // btnParseDecimalFraction
             // 
-            this.btnParseDecimalFraction.Location = new System.Drawing.Point(12, 274);
+            this.btnParseDecimalFraction.Location = new System.Drawing.Point(140, 237);
             this.btnParseDecimalFraction.Name = "btnParseDecimalFraction";
-            this.btnParseDecimalFraction.Size = new System.Drawing.Size(251, 36);
+            this.btnParseDecimalFraction.Size = new System.Drawing.Size(122, 36);
             this.btnParseDecimalFraction.TabIndex = 10;
             this.btnParseDecimalFraction.Text = "Umwandlung Dezimalbruch";
             this.btnParseDecimalFraction.UseVisualStyleBackColor = true;
@@ -136,7 +137,7 @@ namespace Taschenrechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(276, 450);
             this.Controls.Add(this.btnParseDecimalFraction);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnCloseBasicCalc);

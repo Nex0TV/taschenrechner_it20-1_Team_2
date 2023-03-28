@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Mathematik.cs" />
+    <Compile Include="FormLoanCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoanCalc.Designer.cs">
+      <DependentUpon>FormLoanCalc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInfoTech.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLoanCalc.resx">
+      <DependentUpon>FormLoanCalc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGeometry.resx">
       <DependentUpon>FormGeometry.cs</DependentUpon>
     </EmbeddedResource>

@@ -44,9 +44,10 @@ namespace Taschenrechner
             // lblPercentageCalc
             // 
             this.lblPercentageCalc.AutoSize = true;
-            this.lblPercentageCalc.Location = new System.Drawing.Point(13, 13);
+            this.lblPercentageCalc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.lblPercentageCalc.Location = new System.Drawing.Point(12, 9);
             this.lblPercentageCalc.Name = "lblPercentageCalc";
-            this.lblPercentageCalc.Size = new System.Drawing.Size(79, 13);
+            this.lblPercentageCalc.Size = new System.Drawing.Size(132, 22);
             this.lblPercentageCalc.TabIndex = 0;
             this.lblPercentageCalc.Text = "Prozentrechner";
             // 
@@ -61,7 +62,7 @@ namespace Taschenrechner
             // 
             // btnPercentageAddedToThat
             // 
-            this.btnPercentageAddedToThat.Location = new System.Drawing.Point(16, 106);
+            this.btnPercentageAddedToThat.Location = new System.Drawing.Point(16, 163);
             this.btnPercentageAddedToThat.Name = "btnPercentageAddedToThat";
             this.btnPercentageAddedToThat.Size = new System.Drawing.Size(124, 39);
             this.btnPercentageAddedToThat.TabIndex = 2;
@@ -70,7 +71,7 @@ namespace Taschenrechner
             // 
             // btnPercetageTakeAwayFromThat
             // 
-            this.btnPercetageTakeAwayFromThat.Location = new System.Drawing.Point(146, 106);
+            this.btnPercetageTakeAwayFromThat.Location = new System.Drawing.Point(146, 163);
             this.btnPercetageTakeAwayFromThat.Name = "btnPercetageTakeAwayFromThat";
             this.btnPercetageTakeAwayFromThat.Size = new System.Drawing.Size(124, 39);
             this.btnPercetageTakeAwayFromThat.TabIndex = 3;
@@ -79,7 +80,7 @@ namespace Taschenrechner
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(146, 151);
+            this.button1.Location = new System.Drawing.Point(146, 208);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 39);
             this.button1.TabIndex = 5;
@@ -88,7 +89,7 @@ namespace Taschenrechner
             // 
             // btnPercentage
             // 
-            this.btnPercentage.Location = new System.Drawing.Point(16, 151);
+            this.btnPercentage.Location = new System.Drawing.Point(16, 208);
             this.btnPercentage.Name = "btnPercentage";
             this.btnPercentage.Size = new System.Drawing.Size(124, 39);
             this.btnPercentage.TabIndex = 4;
@@ -97,7 +98,7 @@ namespace Taschenrechner
             // 
             // btnGrossToNetPrice
             // 
-            this.btnGrossToNetPrice.Location = new System.Drawing.Point(16, 196);
+            this.btnGrossToNetPrice.Location = new System.Drawing.Point(16, 253);
             this.btnGrossToNetPrice.Name = "btnGrossToNetPrice";
             this.btnGrossToNetPrice.Size = new System.Drawing.Size(254, 39);
             this.btnGrossToNetPrice.TabIndex = 6;
@@ -106,7 +107,7 @@ namespace Taschenrechner
             // 
             // btnNetToGrossPrice
             // 
-            this.btnNetToGrossPrice.Location = new System.Drawing.Point(16, 241);
+            this.btnNetToGrossPrice.Location = new System.Drawing.Point(16, 298);
             this.btnNetToGrossPrice.Name = "btnNetToGrossPrice";
             this.btnNetToGrossPrice.Size = new System.Drawing.Size(254, 39);
             this.btnNetToGrossPrice.TabIndex = 7;
@@ -115,9 +116,9 @@ namespace Taschenrechner
             // 
             // btnCloseBasicCalc
             // 
-            this.btnCloseBasicCalc.Location = new System.Drawing.Point(537, 402);
+            this.btnCloseBasicCalc.Location = new System.Drawing.Point(146, 402);
             this.btnCloseBasicCalc.Name = "btnCloseBasicCalc";
-            this.btnCloseBasicCalc.Size = new System.Drawing.Size(251, 36);
+            this.btnCloseBasicCalc.Size = new System.Drawing.Size(124, 36);
             this.btnCloseBasicCalc.TabIndex = 10;
             this.btnCloseBasicCalc.Text = "Grundrechner schließen";
             this.btnCloseBasicCalc.UseVisualStyleBackColor = true;
@@ -126,7 +127,7 @@ namespace Taschenrechner
             // 
             this.btnChooseModules.Location = new System.Drawing.Point(16, 402);
             this.btnChooseModules.Name = "btnChooseModules";
-            this.btnChooseModules.Size = new System.Drawing.Size(251, 36);
+            this.btnChooseModules.Size = new System.Drawing.Size(124, 36);
             this.btnChooseModules.TabIndex = 9;
             this.btnChooseModules.Text = "Rechenmodul auswählen";
             this.btnChooseModules.UseVisualStyleBackColor = true;
@@ -135,7 +136,7 @@ namespace Taschenrechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(288, 450);
             this.Controls.Add(this.btnCloseBasicCalc);
             this.Controls.Add(this.btnChooseModules);
             this.Controls.Add(this.btnNetToGrossPrice);
