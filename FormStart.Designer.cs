@@ -32,6 +32,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.lblResultHistory = new System.Windows.Forms.Label();
+            this.grpBoxHistory = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // btnStart
@@ -58,20 +59,33 @@
             // 
             this.lblResultHistory.AutoSize = true;
             this.lblResultHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblResultHistory.Location = new System.Drawing.Point(650, 21);
+            this.lblResultHistory.Location = new System.Drawing.Point(583, 14);
             this.lblResultHistory.Name = "lblResultHistory";
             this.lblResultHistory.Size = new System.Drawing.Size(86, 26);
             this.lblResultHistory.TabIndex = 2;
             this.lblResultHistory.Text = "Historie";
             // 
+            // grpBoxHistory
+            // 
+            this.grpBoxHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.grpBoxHistory.BackColor = System.Drawing.SystemColors.Control;
+            this.grpBoxHistory.Location = new System.Drawing.Point(588, 43);
+            this.grpBoxHistory.Name = "grpBoxHistory";
+            this.grpBoxHistory.Size = new System.Drawing.Size(200, 395);
+            this.grpBoxHistory.TabIndex = 3;
+            this.grpBoxHistory.TabStop = false;
+            // 
             // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grpBoxHistory);
             this.Controls.Add(this.lblResultHistory);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnStart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStart";
             this.Text = "Start";
@@ -85,6 +99,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Label lblResultHistory;
+        private System.Windows.Forms.GroupBox grpBoxHistory;
     }
 }
 
