@@ -134,6 +134,7 @@ namespace Taschenrechner.View
             this.btn_undo.TabIndex = 7;
             this.btn_undo.Text = "⬅";
             this.btn_undo.UseVisualStyleBackColor = true;
+            this.btn_undo.Click += new System.EventHandler(this.btn_undo_Click);
             // 
             // btn_7
             // 
@@ -177,6 +178,7 @@ namespace Taschenrechner.View
             this.btn_open_bracket.TabIndex = 11;
             this.btn_open_bracket.Text = "(";
             this.btn_open_bracket.UseVisualStyleBackColor = true;
+            this.btn_open_bracket.Click += new System.EventHandler(this.btn_open_bracket_Click);
             // 
             // btn_close_bracket
             // 
@@ -187,6 +189,7 @@ namespace Taschenrechner.View
             this.btn_close_bracket.TabIndex = 12;
             this.btn_close_bracket.Text = ")";
             this.btn_close_bracket.UseVisualStyleBackColor = true;
+            this.btn_close_bracket.Click += new System.EventHandler(this.btn_close_bracket_Click);
             // 
             // btn_4
             // 
@@ -273,6 +276,7 @@ namespace Taschenrechner.View
             this.btn_0.TabIndex = 20;
             this.btn_0.Text = "0";
             this.btn_0.UseVisualStyleBackColor = true;
+            this.btn_0.Click += new System.EventHandler(this.btn_0_Click);
             // 
             // btn_calc
             // 

@@ -70,7 +70,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Form1.resx">
+    <EmbeddedResource Include="View\BasicCalculatorForm.resx">
       <DependentUpon>BasicCalculatorForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
