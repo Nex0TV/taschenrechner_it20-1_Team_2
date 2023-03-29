@@ -42,7 +42,7 @@ namespace Taschenrechner
             // 
             this.lblSchoolMark.AutoSize = true;
             this.lblSchoolMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.lblSchoolMark.Location = new System.Drawing.Point(12, 9);
+            this.lblSchoolMark.Location = new System.Drawing.Point(108, 9);
             this.lblSchoolMark.Name = "lblSchoolMark";
             this.lblSchoolMark.Size = new System.Drawing.Size(65, 22);
             this.lblSchoolMark.TabIndex = 0;

@@ -47,6 +47,7 @@
             // 
             // btnSettings
             // 
+            this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSettings.Location = new System.Drawing.Point(12, 403);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(175, 35);
@@ -57,6 +58,7 @@
             // 
             // lblResultHistory
             // 
+            this.lblResultHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblResultHistory.AutoSize = true;
             this.lblResultHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblResultHistory.Location = new System.Drawing.Point(583, 14);
@@ -67,6 +69,8 @@
             // 
             // grpBoxHistory
             // 
+            this.grpBoxHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBoxHistory.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.grpBoxHistory.BackColor = System.Drawing.SystemColors.Control;
             this.grpBoxHistory.Location = new System.Drawing.Point(588, 43);
@@ -85,7 +89,6 @@
             this.Controls.Add(this.lblResultHistory);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnStart);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStart";
             this.Text = "Start";

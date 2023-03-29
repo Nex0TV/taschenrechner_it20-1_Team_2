@@ -33,7 +33,7 @@ namespace Taschenrechner
             this.lblResultPercentage = new System.Windows.Forms.Label();
             this.btnPercentageAddedToThat = new System.Windows.Forms.Button();
             this.btnPercetageTakeAwayFromThat = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPercentageFromThat = new System.Windows.Forms.Button();
             this.btnPercentage = new System.Windows.Forms.Button();
             this.btnGrossToNetPrice = new System.Windows.Forms.Button();
             this.btnNetToGrossPrice = new System.Windows.Forms.Button();
@@ -78,14 +78,14 @@ namespace Taschenrechner
             this.btnPercetageTakeAwayFromThat.Text = "% weg";
             this.btnPercetageTakeAwayFromThat.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnPercentageFromThat
             // 
-            this.button1.Location = new System.Drawing.Point(146, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 39);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "% weg";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPercentageFromThat.Location = new System.Drawing.Point(146, 208);
+            this.btnPercentageFromThat.Name = "btnPercentageFromThat";
+            this.btnPercentageFromThat.Size = new System.Drawing.Size(124, 39);
+            this.btnPercentageFromThat.TabIndex = 5;
+            this.btnPercentageFromThat.Text = "% davon";
+            this.btnPercentageFromThat.UseVisualStyleBackColor = true;
             // 
             // btnPercentage
             // 
@@ -141,7 +141,7 @@ namespace Taschenrechner
             this.Controls.Add(this.btnChooseModules);
             this.Controls.Add(this.btnNetToGrossPrice);
             this.Controls.Add(this.btnGrossToNetPrice);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPercentageFromThat);
             this.Controls.Add(this.btnPercentage);
             this.Controls.Add(this.btnPercetageTakeAwayFromThat);
             this.Controls.Add(this.btnPercentageAddedToThat);
@@ -161,7 +161,7 @@ namespace Taschenrechner
         private System.Windows.Forms.Label lblResultPercentage;
         private System.Windows.Forms.Button btnPercentageAddedToThat;
         private System.Windows.Forms.Button btnPercetageTakeAwayFromThat;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPercentageFromThat;
         private System.Windows.Forms.Button btnPercentage;
         private System.Windows.Forms.Button btnGrossToNetPrice;
         private System.Windows.Forms.Button btnNetToGrossPrice;
