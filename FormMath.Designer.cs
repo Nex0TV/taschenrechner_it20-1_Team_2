@@ -60,6 +60,7 @@ namespace Taschenrechner
             this.btnFactorial.TabIndex = 1;
             this.btnFactorial.Text = "Fakultät";
             this.btnFactorial.UseVisualStyleBackColor = true;
+            this.btnFactorial.Click += new System.EventHandler(this.btnFactorial_Click);
             // 
             // btnSquareRoot
             // 

@@ -17,9 +17,9 @@ namespace Taschenrechner
             InitializeComponent();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void btnFactorial_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

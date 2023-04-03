@@ -332,6 +332,7 @@ namespace Taschenrechner
             this.Controls.Add(this.btnInfoTechFactorial);
             this.Controls.Add(this.lblResultInfoTech);
             this.Controls.Add(this.lblInfoTech);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormInfoTech";
             this.Text = "Taschenrechner";
             this.ResumeLayout(false);
