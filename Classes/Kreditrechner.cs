@@ -58,25 +58,26 @@ namespace Taschenrechner.Classes
             return kreditsumme - tilgung;
         }
 
-        public static double gesamtZinsen(double zins, double dauer)
+        public static double gesamtZinsen(double kreditsumme, double zins, double dauerMonate, double _tilgung)
         {
             double gesamtZinsen = 0;
 
-            for (var i = 1; i < dauer; i++)
+            for (var i = 1; i < dauerMonate; i++)
             {
-                gesamtZinsen += zins;
+                gesamtZinsen += kreditsumme * zins / 12;
+                kreditsumme -= _tilgung;
             }
 
             return gesamtZinsen;
         }
 
-        public static Dictionary<string, object> berechneKredit(double kreditsumme, double laufzeit, double zinssatz)
+        public static Dictionary<string, object> berechneKredit(double kreditsumme, double laufzeitMonate, double zinssatz)
         {
             Dictionary<string, object> data = new Dictionary<string, object>();
-            double _tilgung = tilgung(kreditsumme, laufzeit);
+            double _tilgung = tilgung(kreditsumme, laufzeitMonate);
             double kredit = kreditsumme;
 
-            for (int i = 0; i < laufzeit; i++)
+            for (int i = 0; i < laufzeitMonate; i++)
             {
                 double zins = Zins(kreditsumme, zinssatz);
 
@@ -84,7 +85,7 @@ namespace Taschenrechner.Classes
 
                 kreditsumme = restKredit(kreditsumme, _tilgung);
 
-                double gesamtZins = gesamtZinsen(zins, laufzeit);
+                double gesamtZins = gesamtZinsen(kreditsumme, zins, laufzeitMonate, _tilgung);
 
                 data.Add("Gesamtbetrag", kredit);
                 data.Add("Zins", zins);
