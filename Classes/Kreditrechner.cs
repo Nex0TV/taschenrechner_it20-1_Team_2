@@ -10,7 +10,7 @@ namespace Taschenrechner.Classes
     public class kredit
     {
         //Ratenkredit mit Vorgabe Ratenhöhe
-        private double zins(double betrag, double zinssatz, int laufzeit)
+        public static double zins(double betrag, double zinssatz, int laufzeit)
         {
             double zinsen;
             double faktor = 0;
@@ -25,7 +25,7 @@ namespace Taschenrechner.Classes
 
         }
 
-        private string berechneKredit(double kredit, double zinssatz, double rate)
+        public static string RatenkreditVorgabeRatenhoehe(double kredit, double zinssatz, double rate)
         {
             double laufzeit = kredit / rate;
             laufzeit = Math.Ceiling(laufzeit);
@@ -35,6 +35,28 @@ namespace Taschenrechner.Classes
             double schlussrate = Math.Ceiling(kredit + zinsen) - (laufzeit - 1) * rate;
 
             string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monate, Schlussrate: {4:f} €", kredit,zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
+            Console.WriteLine(ergebnis);
+            return ergebnis;
+        }
+
+        public static string RatenkreditVorgabeLaufzeit(double kredit, double zinssatz, double laufzeit)
+        {
+            double rate = Math.Ceiling(kredit * zinssatz);
+            double zinsen = zins(kredit, zinssatz, (int)laufzeit);
+            Console.WriteLine(rate);
+            Console.WriteLine(zinsen);
+
+            rate = Math.Round(((rate / 12) / 100) / laufzeit);
+
+            double ratenhoehe = kredit + rate;
+            Console.WriteLine(ratenhoehe);
+
+           
+            
+
+            double schlussrate = Math.Ceiling(kredit + zinsen) - (laufzeit - 1) * rate;
+            string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monate, Schlussrate: {4:f} €", kredit, zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
+            Console.WriteLine(ergebnis);
             return ergebnis;
         }
 
@@ -126,7 +148,7 @@ namespace Taschenrechner.Classes
         //        Console.WriteLine(data);
         //        return data;
         //    }
-        //}
+    }
     }
 
 
