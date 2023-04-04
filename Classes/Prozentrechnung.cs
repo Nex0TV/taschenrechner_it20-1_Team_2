@@ -44,42 +44,20 @@ namespace Taschenrechner.Classes
 
         public static double Nettopreis(double bruttopreis)
         {
-            double ergebnis = 0;
 
-            if (bruttopreis != 0)
-            {
-               ergebnis = bruttopreis * 0.81;
-            }
-            return ergebnis;
+            if (bruttopreis <= 0) return 0;
+            return bruttopreis * 0.81;
         }
 
         public static double Bruttopreis(double nettopreis)
         {
-            if(nettopreis == 0)
-            {
-                return 0;
-            }
-            else
-            {
-                double ergebnis = nettopreis * 100/119;
-                return ergebnis;
-            }
+            if(nettopreis <= 0) return 0;
+            return nettopreis * 100/119;
         }
         public static double Prozentsatz(double prozentwert, double grundwert)
         {
-            double ergebnis = 1;
-
-            if (grundwert != 0)
-            {
-                ergebnis = (prozentwert / grundwert) * 100;
-
-            }
-            else
-            {
-                ergebnis = -1;
-            }
-            return ergebnis;
-
+            if (grundwert <= 0) return -1;
+            return (prozentwert / grundwert) * 100;
         }
     }
 }
