@@ -57,20 +57,20 @@ namespace Taschenrechner.Model
             {
                 while (numbers.FindIndex(x => x.Equals(_operator.ToString())) != -1)
                 {
-                    var i = numbers.IndexOf(_operator.ToString());
+                    var i = numbers.IndexOf(_operator.ToString()); // TODO: support negative numbers
                     switch (_operator)
                     {
                         case '*':
-                            result = Convert.ToInt32(numbers[i - 1]) * Convert.ToInt32(numbers[i + 1]);
+                            result = Convert.ToDouble(numbers[i - 1]) * Convert.ToDouble(numbers[i + 1]);
                             break;
                         case '/':
-                            result = Convert.ToInt32(numbers[i - 1]) / Convert.ToInt32(numbers[i + 1]);
+                            result = Convert.ToDouble(numbers[i - 1]) / Convert.ToDouble(numbers[i + 1]);
                             break;
                         case '+':
-                            result = Convert.ToInt32(numbers[i - 1]) + Convert.ToInt32(numbers[i + 1]);
+                            result = Convert.ToDouble(numbers[i - 1]) + Convert.ToDouble(numbers[i + 1]);
                             break;
                         case '-':
-                            result = Convert.ToInt32(numbers[i - 1]) - Convert.ToInt32(numbers[i + 1]);
+                            result = Convert.ToDouble(numbers[i - 1]) - Convert.ToDouble(numbers[i + 1]);
                             break;
                     }
 

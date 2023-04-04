@@ -12,9 +12,9 @@ using Taschenrechner.Model;
 
 namespace Taschenrechner.View
 {
-    public partial class Form1 : Form
+    public partial class BasicCalculator : Form
     {
-        public Form1()
+        public BasicCalculator()
         {
             InitializeComponent();
         }
@@ -124,7 +124,7 @@ namespace Taschenrechner.View
 
         private void btn_calc_Click(object sender, EventArgs e)
         {
-            var result = BasicCalculator.CalculateString(tb_calculation.Text);
+            var result = Model.BasicCalculator.CalculateString(tb_calculation.Text);
 
             lbl_result.Text = $"Ergebnis: {tb_calculation.Text} = {result}";
         }
