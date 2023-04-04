@@ -79,7 +79,7 @@ namespace Taschenrechner.Model
                     numbers.RemoveAt(i); // remove second operator
                 }
             }
-
+            // TODO: Unit tests
             return result;
         }
 

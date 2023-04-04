@@ -18,7 +18,7 @@ namespace Taschenrechner
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Taschenrechner.View.BasicCalculator());
-            Application.Run(new Form1());
+            Application.Run(new FormStart());
         }
     }
 }
