@@ -37,12 +37,12 @@ namespace Taschenrechner.View
         {
             var r_operator = new Regex("[+\\-*\\/]");
             var r_operator_pos0 = new Regex("^[+\\-*\\/]");
-            if (tb_calculation.Text.Length == 0 // set minus sign at start for negative value
-                && _operator == "-")
-            {
-                tb_calculation.Text = $"{_operator}";
-            }
-            else if (r_operator_pos0.IsMatch(tb_calculation.Text) // skip if first character is a minus
+            //if (tb_calculation.Text.Length == 0 // set minus sign at start for negative value
+            //    && _operator == "-")
+            //{
+            //    tb_calculation.Text = $"{_operator}";
+            //}
+            if (r_operator_pos0.IsMatch(tb_calculation.Text) // skip if first character is a minus
                 && tb_calculation.Text.Length == 1)
             {
                 
@@ -179,6 +179,11 @@ namespace Taschenrechner.View
         private void btn_close_bracket_Click(object sender, EventArgs e)
         {
             add_bracket(')');
+        }
+
+        private void btn_sign_click(object sender, EventArgs e)
+        {
+
         }
     }
 }

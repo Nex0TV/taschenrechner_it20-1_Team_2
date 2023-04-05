@@ -51,6 +51,7 @@ namespace Taschenrechner.View
             this.btn_comma = new System.Windows.Forms.Button();
             this.btn_0 = new System.Windows.Forms.Button();
             this.btn_calc = new System.Windows.Forms.Button();
+            this.btn_sign = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -281,19 +282,31 @@ namespace Taschenrechner.View
             // btn_calc
             // 
             this.btn_calc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_calc.Location = new System.Drawing.Point(186, 311);
+            this.btn_calc.Location = new System.Drawing.Point(186, 358);
             this.btn_calc.Name = "btn_calc";
-            this.btn_calc.Size = new System.Drawing.Size(42, 88);
+            this.btn_calc.Size = new System.Drawing.Size(42, 41);
             this.btn_calc.TabIndex = 21;
             this.btn_calc.Text = "=";
             this.btn_calc.UseVisualStyleBackColor = true;
             this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
             // 
-            // Form1
+            // btn_sign
+            // 
+            this.btn_sign.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sign.Location = new System.Drawing.Point(186, 311);
+            this.btn_sign.Name = "btn_sign";
+            this.btn_sign.Size = new System.Drawing.Size(42, 41);
+            this.btn_sign.TabIndex = 22;
+            this.btn_sign.Text = "+/-";
+            this.btn_sign.UseVisualStyleBackColor = true;
+            this.btn_sign.Click += new System.EventHandler(this.btn_sign_click);
+            // 
+            // BasicCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 450);
+            this.Controls.Add(this.btn_sign);
             this.Controls.Add(this.btn_calc);
             this.Controls.Add(this.btn_0);
             this.Controls.Add(this.btn_comma);
@@ -316,7 +329,7 @@ namespace Taschenrechner.View
             this.Controls.Add(this.lbl_result);
             this.Controls.Add(this.tb_calculation);
             this.Controls.Add(this.lbl_title);
-            this.Name = "Form1";
+            this.Name = "BasicCalculator";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -347,5 +360,6 @@ namespace Taschenrechner.View
         private System.Windows.Forms.Button btn_comma;
         private System.Windows.Forms.Button btn_0;
         private System.Windows.Forms.Button btn_calc;
+        private System.Windows.Forms.Button btn_sign;
     }
 }

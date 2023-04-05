@@ -44,7 +44,7 @@ namespace Taschenrechner.Model
         }
 
         /// <summary>
-        /// Finds the given operatoes in a string and calculates the number before and after it together.
+        /// Finds the given operators in a string and calculates the number before and after it together.
         /// You should call this method twice to do points calculations before dash calculations.
         /// </summary>
         /// <param name="result">If you got a result before.</param>
@@ -53,7 +53,19 @@ namespace Taschenrechner.Model
         /// <returns></returns>
         public static double CalculateList(double result, string operators, List<string> numbers)
         {
+            var operator_positions = new List<int>();
             foreach (char _operator in operators)
+            {
+                int last_operator_position = 0;
+                while (numbers.IndexOf(_operator.ToString(), last_operator_position) != -1)
+                {
+                    last_operator_position = numbers.IndexOf(_operator.ToString(), last_operator_position);
+                    int search_position = operator_positions.Count() == 0 ? 0 : operator_positions.GetRange(last_operator_position, operator_positions.).Min(); // TODO: hier weitermachen
+                    numbers.IndexOf(_operator.ToString());
+                    // TODO: check if it's found
+                }
+            }
+            foreach (char _operator in operators) // TODO: find all positions for operators and find them in order of occurence
             {
                 while (numbers.FindIndex(x => x.Equals(_operator.ToString())) != -1)
                 {
