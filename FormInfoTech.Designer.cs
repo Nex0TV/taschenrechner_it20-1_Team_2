@@ -60,7 +60,7 @@ namespace Taschenrechner
             // 
             // btnInfoTechFactorial
             // 
-            this.btnInfoTechFactorial.Location = new System.Drawing.Point(16, 162);
+            this.btnInfoTechFactorial.Location = new System.Drawing.Point(12, 221);
             this.btnInfoTechFactorial.Name = "btnInfoTechFactorial";
             this.btnInfoTechFactorial.Size = new System.Drawing.Size(146, 37);
             this.btnInfoTechFactorial.TabIndex = 2;
@@ -69,7 +69,7 @@ namespace Taschenrechner
             // 
             // btnInfoTechSquareRoot
             // 
-            this.btnInfoTechSquareRoot.Location = new System.Drawing.Point(168, 162);
+            this.btnInfoTechSquareRoot.Location = new System.Drawing.Point(168, 221);
             this.btnInfoTechSquareRoot.Name = "btnInfoTechSquareRoot";
             this.btnInfoTechSquareRoot.Size = new System.Drawing.Size(138, 37);
             this.btnInfoTechSquareRoot.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace Taschenrechner
             // 
             // btnCloseBasicCalc
             // 
-            this.btnCloseBasicCalc.Location = new System.Drawing.Point(168, 402);
+            this.btnCloseBasicCalc.Location = new System.Drawing.Point(168, 598);
             this.btnCloseBasicCalc.Name = "btnCloseBasicCalc";
             this.btnCloseBasicCalc.Size = new System.Drawing.Size(138, 36);
             this.btnCloseBasicCalc.TabIndex = 24;
@@ -103,7 +103,7 @@ namespace Taschenrechner
             // 
             // btnChooseModules
             // 
-            this.btnChooseModules.Location = new System.Drawing.Point(16, 402);
+            this.btnChooseModules.Location = new System.Drawing.Point(12, 598);
             this.btnChooseModules.Name = "btnChooseModules";
             this.btnChooseModules.Size = new System.Drawing.Size(146, 36);
             this.btnChooseModules.TabIndex = 23;
@@ -114,7 +114,7 @@ namespace Taschenrechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 450);
+            this.ClientSize = new System.Drawing.Size(316, 646);
             this.Controls.Add(this.btnCloseBasicCalc);
             this.Controls.Add(this.btnChooseModules);
             this.Controls.Add(this.btnInfoTechDelete);
