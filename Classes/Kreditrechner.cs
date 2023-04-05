@@ -35,7 +35,7 @@ namespace Taschenrechner.Classes
             double schlussrate = Math.Ceiling(kredit + zinsen) - (laufzeit - 1) * rate;
 
             string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monat(e), Schlussrate: {4:f} €", kredit,zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
-            Console.WriteLine("Kredit, Zinssatz, Ratenhöhe vorgegeben:\n" + ergebnis);
+            Console.WriteLine(ergebnis);
             return ergebnis;
         }
 
@@ -45,10 +45,19 @@ namespace Taschenrechner.Classes
             double rate = (kredit + zinsen) / laufzeit;
             double schlussrate = Math.Ceiling(kredit + zinsen) - (laufzeit - 1) * rate;
             string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monat(e), Schlussrate: {4:f} €", kredit, zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
-            Console.WriteLine("Kredit, Zinssatz, Laufzeit vorgegeben:\n" + ergebnis);
+            Console.WriteLine(ergebnis);
             return ergebnis;
         }
 
+        public static string Einmalrueckzahlung(double kredit, double zinssatz)
+        {
+            double zinsen = zins(kredit, zinssatz, 1);
+            double rueckzahlbetrag = kredit + zinsen;
+            string ergebnis = String.Format("Einmalrückzahlbetrag: {0:f}", rueckzahlbetrag);
+            Console.WriteLine(ergebnis);
+            return ergebnis;
+            
+        }
         //    public bool OneTimePayment { get; set; }
         //    public double Loan { get; set; }
         //    public int Runtime { get; set; }
