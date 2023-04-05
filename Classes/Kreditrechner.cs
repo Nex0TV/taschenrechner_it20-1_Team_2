@@ -20,7 +20,7 @@ namespace Taschenrechner.Classes
             }
             faktor = faktor / laufzeit;
 
-            zinsen = betrag * faktor * zinssatz / 100 / 12;
+            zinsen = Math.Round(((betrag * faktor * zinssatz) / 100) / 12, 2);
             return zinsen;
 
         }
@@ -34,29 +34,18 @@ namespace Taschenrechner.Classes
             laufzeit = Math.Ceiling((kredit + zinsen) / rate);
             double schlussrate = Math.Ceiling(kredit + zinsen) - (laufzeit - 1) * rate;
 
-            string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monate, Schlussrate: {4:f} €", kredit,zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
-            Console.WriteLine(ergebnis);
+            string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monat(e), Schlussrate: {4:f} €", kredit,zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
+            Console.WriteLine("Kredit, Zinssatz, Ratenhöhe vorgegeben:\n" + ergebnis);
             return ergebnis;
         }
 
         public static string RatenkreditVorgabeLaufzeit(double kredit, double zinssatz, double laufzeit)
         {
-            double rate = Math.Ceiling(kredit * zinssatz);
             double zinsen = zins(kredit, zinssatz, (int)laufzeit);
-            Console.WriteLine(rate);
-            Console.WriteLine(zinsen);
-
-            rate = Math.Round(((rate / 12) / 100) / laufzeit);
-
-            double ratenhoehe = kredit + rate;
-            Console.WriteLine(ratenhoehe);
-
-           
-            
-
+            double rate = (kredit + zinsen) / laufzeit;
             double schlussrate = Math.Ceiling(kredit + zinsen) - (laufzeit - 1) * rate;
-            string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monate, Schlussrate: {4:f} €", kredit, zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
-            Console.WriteLine(ergebnis);
+            string ergebnis = String.Format("Kredit: {0:f} €, Zinssatz: {1:f} % Rate: {2:f} € -> Laufzeit: {3:d} Monat(e), Schlussrate: {4:f} €", kredit, zinssatz, rate, Convert.ToInt32(laufzeit), schlussrate);
+            Console.WriteLine("Kredit, Zinssatz, Laufzeit vorgegeben:\n" + ergebnis);
             return ergebnis;
         }
 
