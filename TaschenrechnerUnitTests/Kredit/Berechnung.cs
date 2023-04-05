@@ -11,7 +11,8 @@ namespace TaschenrechnerUnitTests.Kredit {
         [Test]
         public void Berechnen()
         {
-            kredit.berechneKredit(25000, 48, 5);
+            //kredit.RatenkreditVorgabeRatenhoehe(1000, 3.5, 502.19);
+            kredit.RatenkreditVorgabeLaufzeit(1000, 3.5, 1);
         }
     }
 }
