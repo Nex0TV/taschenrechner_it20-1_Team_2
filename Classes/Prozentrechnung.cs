@@ -10,41 +10,18 @@ namespace Taschenrechner.Classes
     {
         public static double ProzentDazu (double psatz, double grundwert)
         {
-            double ergebnis = 1;
-
-          if(psatz != 0)
-            {
-                ergebnis = ((psatz / 100) * grundwert) + grundwert;
-                
-            }
-          else
-            {
-                ergebnis = grundwert;
-            }
-            return ergebnis;
-       
+            if (psatz == 0) return grundwert;
+            return ((psatz / 100) * grundwert) + grundwert;
         }
 
         public static double ProzentWeg(double prozentsatz, double grundwert)
         {
-            double ergebnis = 1;
-
-            if (prozentsatz != 0)
-            {
-                ergebnis = grundwert - ((prozentsatz / 100) * grundwert);
-
-            }
-            else
-            {
-                ergebnis = grundwert;
-            }
-            return ergebnis;
-
+            if (prozentsatz == 0) return grundwert;
+            return grundwert - ((prozentsatz / 100) * grundwert);
         }
 
         public static double Nettopreis(double bruttopreis)
         {
-
             if (bruttopreis <= 0) return 0;
             return bruttopreis * 0.81;
         }
