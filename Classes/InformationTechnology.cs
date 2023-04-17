@@ -91,13 +91,13 @@ namespace Taschenrechner.Classes
         public static class VideoSizeCalculator
         {
             public static double Calculate(
+                int fps,
+                int videoLength,
+                int imageSize,
                 int colorDepth = 0, 
                 int channels = 0,
                 int width = 0,
-                int height = 0,
-                int fps = 0,
-                int videoLength = 0,
-                int imageSize = 0
+                int height = 0
                 )
             {
                 if (imageSize == 0)
@@ -203,7 +203,7 @@ namespace Taschenrechner.Classes
             private readonly static Dictionary<string, int> DecimalPrefixes = new Dictionary<string, int>
             {
                 { "B",  0 },
-                { "kB", 1 },
+                { "KB", 1 },
                 { "MB", 2 },
                 { "GB", 3 },
                 { "TB", 4 },
