@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace Taschenrechner.Classes
 {
@@ -65,6 +66,24 @@ namespace Taschenrechner.Classes
             {
                 throw new DivideByZeroException("Division of {" + zaehler + "} by zero.");
             }
+        }
+
+        public static string ZahlZuBruch(double zahl)
+        {
+            int zaehler = (int)Potenz(zahl, 10);
+            int nenner = (int)(zahl * zaehler);
+            int gcd = getGcd(zaehler, nenner);
+
+            zaehler /= gcd;
+            nenner /= gcd;
+
+            return (zaehler + "/" + nenner);
+        }
+
+        private static int getGcd(int zaehler, int nenner)
+        {
+            if (zaehler == 0) return nenner;
+            return getGcd(nenner % zaehler, zaehler);
         }
 
         /// <summary>

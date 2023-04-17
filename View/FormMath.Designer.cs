@@ -71,6 +71,7 @@ namespace Taschenrechner
             this.btnSquareRoot.TabIndex = 2;
             this.btnSquareRoot.Text = "Quadratwurzel";
             this.btnSquareRoot.UseVisualStyleBackColor = true;
+            this.btnSquareRoot.Click += new System.EventHandler(this.btnSquareRoot_Click);
             // 
             // btnPower
             // 
@@ -90,6 +91,7 @@ namespace Taschenrechner
             this.btnPrimeNum.TabIndex = 4;
             this.btnPrimeNum.Text = "Primzahlen zwischen Grenzwerten";
             this.btnPrimeNum.UseVisualStyleBackColor = true;
+            this.btnPrimeNum.Click += new System.EventHandler(this.btnPrimeNum_Click);
             // 
             // btnVulgarFraction
             // 
@@ -99,6 +101,7 @@ namespace Taschenrechner
             this.btnVulgarFraction.TabIndex = 6;
             this.btnVulgarFraction.Text = "Gemeiner Bruch";
             this.btnVulgarFraction.UseVisualStyleBackColor = true;
+            this.btnVulgarFraction.Click += new System.EventHandler(this.btnVulgarFraction_Click);
             // 
             // btnChooseModules
             // 
@@ -135,6 +138,7 @@ namespace Taschenrechner
             this.btnParseDecimalFraction.TabIndex = 10;
             this.btnParseDecimalFraction.Text = "Umwandlung Dezimalbruch";
             this.btnParseDecimalFraction.UseVisualStyleBackColor = true;
+            this.btnParseDecimalFraction.Click += new System.EventHandler(this.btnParseDecimalFraction_Click);
             // 
             // lblResult
             // 
@@ -175,7 +179,6 @@ namespace Taschenrechner
         private System.Windows.Forms.Button btnSquareRoot;
         private System.Windows.Forms.Button btnPower;
         private System.Windows.Forms.Button btnPrimeNum;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnVulgarFraction;
         private System.Windows.Forms.Button btnChooseModules;
         private System.Windows.Forms.Button btnCloseBasicCalc;
