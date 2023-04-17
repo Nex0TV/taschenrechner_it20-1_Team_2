@@ -49,6 +49,48 @@
     <Compile Include="Classes\Schule.cs" />
     <Compile Include="Classes\Geometrie.cs" />
     <Compile Include="Classes\Mathematik.cs" />
+    <Compile Include="FormLoanCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoanCalc.Designer.cs">
+      <DependentUpon>FormLoanCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInfoTech.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoTech.Designer.cs">
+      <DependentUpon>FormInfoTech.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSchoolMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSchoolMark.Designer.cs">
+      <DependentUpon>FormSchoolMark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeometry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeometry.Designer.cs">
+      <DependentUpon>FormGeometry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPercentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPercentage.Designer.cs">
+      <DependentUpon>FormPercentage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMath.Designer.cs">
+      <DependentUpon>FormMath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModules.Designer.cs">
+      <DependentUpon>FormModules.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Prozentrechnung.cs" />
     <Compile Include="FormSettings.cs">
       <SubType>Form</SubType>
@@ -66,6 +108,24 @@
     <Compile Include="Model\BasicCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLoanCalc.resx">
+      <DependentUpon>FormLoanCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeometry.resx">
+      <DependentUpon>FormGeometry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoTech.resx">
+      <DependentUpon>FormInfoTech.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPercentage.resx">
+      <DependentUpon>FormPercentage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMath.resx">
+      <DependentUpon>FormMath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSchoolMark.resx">
+      <DependentUpon>FormSchoolMark.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="View\BasicCalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModules.resx">
+      <DependentUpon>FormModules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

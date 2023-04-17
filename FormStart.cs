@@ -19,7 +19,9 @@ namespace Taschenrechner
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            // grundrechenarten rechner öffnen
+            FormModules modules = new FormModules();
+            modules.ShowDialog();
+
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
