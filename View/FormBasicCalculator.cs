@@ -12,9 +12,9 @@ using Taschenrechner.Model;
 
 namespace Taschenrechner.View
 {
-    public partial class Form1 : Form
+    public partial class FormBasicCalculator : Form
     {
-        public Form1()
+        public FormBasicCalculator()
         {
             InitializeComponent();
         }

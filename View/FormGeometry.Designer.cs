@@ -66,6 +66,7 @@ namespace Taschenrechner
             this.btnCircle.TabIndex = 2;
             this.btnCircle.Text = "Kreis";
             this.btnCircle.UseVisualStyleBackColor = true;
+            this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
             // 
             // btnTriangle
             // 

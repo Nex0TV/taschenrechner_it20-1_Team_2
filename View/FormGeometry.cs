@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Taschenrechner.Classes;
+using Taschenrechner.View;
+
 
 namespace Taschenrechner
 {
@@ -15,6 +18,12 @@ namespace Taschenrechner
         public FormGeometry()
         {
             InitializeComponent();
+        }
+
+        private void btnCircle_Click(object sender, EventArgs e)
+        {
+            var thread_formBasicCalc = new Task(new Action(() => Application.Run(new FormBasicCalculator())));
+            thread_formBasicCalc.Start();
         }
     }
 }
