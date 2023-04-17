@@ -30,12 +30,15 @@ namespace Taschenrechner
         private void InitializeComponent()
         {
             this.lblSchoolMark = new System.Windows.Forms.Label();
-            this.lblResultSchoolMark = new System.Windows.Forms.Label();
+            this.lblDurchschnitt = new System.Windows.Forms.Label();
             this.btnAverageMark = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnMarkNumber = new System.Windows.Forms.Button();
             this.btnCloseBasicCalc = new System.Windows.Forms.Button();
             this.btnChooseModules = new System.Windows.Forms.Button();
+            this.lblResultDurchschnitt = new System.Windows.Forms.Label();
+            this.lblNotempfehlung = new System.Windows.Forms.Label();
+            this.lblResultEmpfehlung = new System.Windows.Forms.Label();
+            this.lblAnzahl = new System.Windows.Forms.Label();
+            this.lblResultAnzahl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblSchoolMark
@@ -48,41 +51,24 @@ namespace Taschenrechner
             this.lblSchoolMark.TabIndex = 0;
             this.lblSchoolMark.Text = "Schule";
             // 
-            // lblResultSchoolMark
+            // lblDurchschnitt
             // 
-            this.lblResultSchoolMark.AutoSize = true;
-            this.lblResultSchoolMark.Location = new System.Drawing.Point(13, 62);
-            this.lblResultSchoolMark.Name = "lblResultSchoolMark";
-            this.lblResultSchoolMark.Size = new System.Drawing.Size(51, 13);
-            this.lblResultSchoolMark.TabIndex = 1;
-            this.lblResultSchoolMark.Text = "Ergebnis:";
+            this.lblDurchschnitt.AutoSize = true;
+            this.lblDurchschnitt.Location = new System.Drawing.Point(13, 62);
+            this.lblDurchschnitt.Name = "lblDurchschnitt";
+            this.lblDurchschnitt.Size = new System.Drawing.Size(70, 13);
+            this.lblDurchschnitt.TabIndex = 1;
+            this.lblDurchschnitt.Text = "Durchschnitt:";
             // 
             // btnAverageMark
             // 
-            this.btnAverageMark.Location = new System.Drawing.Point(16, 200);
+            this.btnAverageMark.Location = new System.Drawing.Point(12, 136);
             this.btnAverageMark.Name = "btnAverageMark";
-            this.btnAverageMark.Size = new System.Drawing.Size(119, 44);
+            this.btnAverageMark.Size = new System.Drawing.Size(251, 44);
             this.btnAverageMark.TabIndex = 2;
-            this.btnAverageMark.Text = "Notendurchschnitt";
+            this.btnAverageMark.Text = "Noten Berechnen";
             this.btnAverageMark.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(16, 250);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 44);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Zeugnissnotenempfehlung";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnMarkNumber
-            // 
-            this.btnMarkNumber.Location = new System.Drawing.Point(141, 200);
-            this.btnMarkNumber.Name = "btnMarkNumber";
-            this.btnMarkNumber.Size = new System.Drawing.Size(126, 44);
-            this.btnMarkNumber.TabIndex = 4;
-            this.btnMarkNumber.Text = "Notenzahl";
-            this.btnMarkNumber.UseVisualStyleBackColor = true;
+            this.btnAverageMark.Click += new System.EventHandler(this.btnAverageMark_Click);
             // 
             // btnCloseBasicCalc
             // 
@@ -102,17 +88,65 @@ namespace Taschenrechner
             this.btnChooseModules.Text = "Rechenmodul auswählen";
             this.btnChooseModules.UseVisualStyleBackColor = true;
             // 
+            // lblResultDurchschnitt
+            // 
+            this.lblResultDurchschnitt.AutoSize = true;
+            this.lblResultDurchschnitt.Location = new System.Drawing.Point(109, 62);
+            this.lblResultDurchschnitt.Name = "lblResultDurchschnitt";
+            this.lblResultDurchschnitt.Size = new System.Drawing.Size(10, 13);
+            this.lblResultDurchschnitt.TabIndex = 15;
+            this.lblResultDurchschnitt.Text = " ";
+            // 
+            // lblNotempfehlung
+            // 
+            this.lblNotempfehlung.AutoSize = true;
+            this.lblNotempfehlung.Location = new System.Drawing.Point(13, 84);
+            this.lblNotempfehlung.Name = "lblNotempfehlung";
+            this.lblNotempfehlung.Size = new System.Drawing.Size(94, 13);
+            this.lblNotempfehlung.TabIndex = 16;
+            this.lblNotempfehlung.Text = "Notenempfehlung:";
+            // 
+            // lblResultEmpfehlung
+            // 
+            this.lblResultEmpfehlung.AutoSize = true;
+            this.lblResultEmpfehlung.Location = new System.Drawing.Point(109, 84);
+            this.lblResultEmpfehlung.Name = "lblResultEmpfehlung";
+            this.lblResultEmpfehlung.Size = new System.Drawing.Size(10, 13);
+            this.lblResultEmpfehlung.TabIndex = 17;
+            this.lblResultEmpfehlung.Text = " ";
+            // 
+            // lblAnzahl
+            // 
+            this.lblAnzahl.AutoSize = true;
+            this.lblAnzahl.Location = new System.Drawing.Point(12, 106);
+            this.lblAnzahl.Name = "lblAnzahl";
+            this.lblAnzahl.Size = new System.Drawing.Size(74, 13);
+            this.lblAnzahl.TabIndex = 18;
+            this.lblAnzahl.Text = "Anzahl Noten:";
+            // 
+            // lblResultAnzahl
+            // 
+            this.lblResultAnzahl.AutoSize = true;
+            this.lblResultAnzahl.Location = new System.Drawing.Point(109, 106);
+            this.lblResultAnzahl.Name = "lblResultAnzahl";
+            this.lblResultAnzahl.Size = new System.Drawing.Size(10, 13);
+            this.lblResultAnzahl.TabIndex = 19;
+            this.lblResultAnzahl.Text = " ";
+            // 
             // FormSchoolMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 450);
+            this.Controls.Add(this.lblResultAnzahl);
+            this.Controls.Add(this.lblAnzahl);
+            this.Controls.Add(this.lblResultEmpfehlung);
+            this.Controls.Add(this.lblNotempfehlung);
+            this.Controls.Add(this.lblResultDurchschnitt);
             this.Controls.Add(this.btnCloseBasicCalc);
             this.Controls.Add(this.btnChooseModules);
-            this.Controls.Add(this.btnMarkNumber);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAverageMark);
-            this.Controls.Add(this.lblResultSchoolMark);
+            this.Controls.Add(this.lblDurchschnitt);
             this.Controls.Add(this.lblSchoolMark);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormSchoolMark";
@@ -125,11 +159,14 @@ namespace Taschenrechner
         #endregion
 
         private System.Windows.Forms.Label lblSchoolMark;
-        private System.Windows.Forms.Label lblResultSchoolMark;
+        private System.Windows.Forms.Label lblDurchschnitt;
         private System.Windows.Forms.Button btnAverageMark;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnMarkNumber;
         private System.Windows.Forms.Button btnCloseBasicCalc;
         private System.Windows.Forms.Button btnChooseModules;
+        private System.Windows.Forms.Label lblResultDurchschnitt;
+        private System.Windows.Forms.Label lblNotempfehlung;
+        private System.Windows.Forms.Label lblResultEmpfehlung;
+        private System.Windows.Forms.Label lblAnzahl;
+        private System.Windows.Forms.Label lblResultAnzahl;
     }
 }
