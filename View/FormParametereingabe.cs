@@ -14,15 +14,20 @@ namespace Taschenrechner.View
     public partial class FormParametereingabe : Form
     {
         public string Parameter;
-        public FormParametereingabe(string titel)
+        public FormParametereingabe()
         {
             InitializeComponent();
+        }
+
+        public void set_titel(string titel)
+        {
             this.Text = titel;
         }
 
         private void btn_enter_Click(object sender, EventArgs e)
         {
             Parameter = this.tbox_result.Text;
+            this.tbox_result.Text = "";
             Close();
         }
 

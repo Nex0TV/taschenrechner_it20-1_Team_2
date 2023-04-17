@@ -19,11 +19,35 @@ namespace Taschenrechner
             InitializeComponent();
         }
 
+        private FormParametereingabe EingabeModul = new FormParametereingabe();
+
         private void btnFactorial_Click(object sender, EventArgs e)
         {
-            var formParametereingabe = new FormParametereingabe("Falkutät");
-            formParametereingabe.ShowDialog();
-            this.lblResult.Text += formParametereingabe.Parameter;
+            EingabeModul.set_titel("Fakultät");
+            EingabeModul.ShowDialog();
+
+            int result = Mathematik.Fakultaet(Convert.ToInt32(EingabeModul.Parameter));
+
+            this.lblResultText.Text = "Fakultät:";
+            this.lblResult.Text = result.ToString();
+        }
+
+        private void btnPower_Click(object sender, EventArgs e)
+        {
+            EingabeModul.set_titel("Zahl");
+            EingabeModul.ShowDialog();
+
+            double zahl = Convert.ToDouble(EingabeModul.Parameter);
+
+            EingabeModul.set_titel("Exponent");
+            EingabeModul.ShowDialog();
+
+            int exponent = Convert.ToInt32(EingabeModul.Parameter);
+
+            double result = Mathematik.Potenz(zahl, exponent);
+
+            this.lblResultText.Text = "Potenz:";
+            this.lblResult.Text = result.ToString();
         }
     }
 }

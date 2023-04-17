@@ -37,8 +37,9 @@ namespace Taschenrechner
             this.btnVulgarFraction = new System.Windows.Forms.Button();
             this.btnChooseModules = new System.Windows.Forms.Button();
             this.btnCloseBasicCalc = new System.Windows.Forms.Button();
-            this.lblResult = new System.Windows.Forms.Label();
+            this.lblResultText = new System.Windows.Forms.Label();
             this.btnParseDecimalFraction = new System.Windows.Forms.Button();
+            this.lblResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMathCalc
@@ -79,6 +80,7 @@ namespace Taschenrechner
             this.btnPower.TabIndex = 3;
             this.btnPower.Text = "Potenzfunktion";
             this.btnPower.UseVisualStyleBackColor = true;
+            this.btnPower.Click += new System.EventHandler(this.btnPower_Click);
             // 
             // btnPrimeNum
             // 
@@ -116,14 +118,14 @@ namespace Taschenrechner
             this.btnCloseBasicCalc.Text = "Grundrechner schließen";
             this.btnCloseBasicCalc.UseVisualStyleBackColor = true;
             // 
-            // lblResult
+            // lblResultText
             // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(13, 91);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(51, 13);
-            this.lblResult.TabIndex = 9;
-            this.lblResult.Text = "Ergebnis:";
+            this.lblResultText.AutoSize = true;
+            this.lblResultText.Location = new System.Drawing.Point(13, 91);
+            this.lblResultText.Name = "lblResultText";
+            this.lblResultText.Size = new System.Drawing.Size(51, 13);
+            this.lblResultText.TabIndex = 9;
+            this.lblResultText.Text = "Ergebnis:";
             // 
             // btnParseDecimalFraction
             // 
@@ -134,13 +136,22 @@ namespace Taschenrechner
             this.btnParseDecimalFraction.Text = "Umwandlung Dezimalbruch";
             this.btnParseDecimalFraction.UseVisualStyleBackColor = true;
             // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(71, 91);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 13);
+            this.lblResult.TabIndex = 11;
+            // 
             // FormMath
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(276, 450);
-            this.Controls.Add(this.btnParseDecimalFraction);
             this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.btnParseDecimalFraction);
+            this.Controls.Add(this.lblResultText);
             this.Controls.Add(this.btnCloseBasicCalc);
             this.Controls.Add(this.btnChooseModules);
             this.Controls.Add(this.btnVulgarFraction);
@@ -168,7 +179,8 @@ namespace Taschenrechner
         private System.Windows.Forms.Button btnVulgarFraction;
         private System.Windows.Forms.Button btnChooseModules;
         private System.Windows.Forms.Button btnCloseBasicCalc;
-        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblResultText;
         private System.Windows.Forms.Button btnParseDecimalFraction;
+        private System.Windows.Forms.Label lblResult;
     }
 }
