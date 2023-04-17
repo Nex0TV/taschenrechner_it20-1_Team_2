@@ -21,12 +21,9 @@ namespace Taschenrechner
 
         private void btnFactorial_Click(object sender, EventArgs e)
         {
-            //var Eingabe = new FormParametereingabe("Fakultät");
-            //var thread_formParam = new Task(new Action(() => Application.Run(Eingabe)));
-            //thread_formParam.Start();
-            //Eingbe.getResult();
-            var test = FormParametereingabe.getValue("Falkultät");
-            Console.WriteLine(test);
+            var formParametereingabe = new FormParametereingabe("Falkutät");
+            formParametereingabe.ShowDialog();
+            this.lblResult.Text += formParametereingabe.Parameter;
         }
     }
 }

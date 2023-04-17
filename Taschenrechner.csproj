@@ -49,11 +49,11 @@
     <Compile Include="Classes\Schule.cs" />
     <Compile Include="Classes\Geometrie.cs" />
     <Compile Include="Classes\Mathematik.cs" />
-    <Compile Include="View\Form1.cs">
+    <Compile Include="View\FormParametereingabe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\FormParametereingabe.Designer.cs">
+      <DependentUpon>FormParametereingabe.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormLoanCalc.cs">
       <SubType>Form</SubType>
@@ -114,8 +114,8 @@
     <Compile Include="Model\BasicCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormParametereingabe.resx">
+      <DependentUpon>FormParametereingabe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormLoanCalc.resx">
       <DependentUpon>FormLoanCalc.cs</DependentUpon>

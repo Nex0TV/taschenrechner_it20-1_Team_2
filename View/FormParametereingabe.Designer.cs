@@ -54,6 +54,7 @@ namespace Taschenrechner.View
             this.btn_1.TabIndex = 0;
             this.btn_1.Text = "1";
             this.btn_1.UseVisualStyleBackColor = true;
+            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_2
             // 
@@ -63,6 +64,7 @@ namespace Taschenrechner.View
             this.btn_2.TabIndex = 1;
             this.btn_2.Text = "2";
             this.btn_2.UseVisualStyleBackColor = true;
+            this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
             // 
             // btn_3
             // 
@@ -72,6 +74,7 @@ namespace Taschenrechner.View
             this.btn_3.TabIndex = 2;
             this.btn_3.Text = "3";
             this.btn_3.UseVisualStyleBackColor = true;
+            this.btn_3.Click += new System.EventHandler(this.btn_3_Click);
             // 
             // btn_4
             // 
@@ -81,6 +84,7 @@ namespace Taschenrechner.View
             this.btn_4.TabIndex = 3;
             this.btn_4.Text = "4";
             this.btn_4.UseVisualStyleBackColor = true;
+            this.btn_4.Click += new System.EventHandler(this.btn_4_Click);
             // 
             // btn_5
             // 
@@ -90,6 +94,7 @@ namespace Taschenrechner.View
             this.btn_5.TabIndex = 4;
             this.btn_5.Text = "5";
             this.btn_5.UseVisualStyleBackColor = true;
+            this.btn_5.Click += new System.EventHandler(this.btn_5_Click);
             // 
             // btn_6
             // 
@@ -99,6 +104,7 @@ namespace Taschenrechner.View
             this.btn_6.TabIndex = 5;
             this.btn_6.Text = "6";
             this.btn_6.UseVisualStyleBackColor = true;
+            this.btn_6.Click += new System.EventHandler(this.btn_6_Click);
             // 
             // btn_7
             // 
@@ -108,6 +114,7 @@ namespace Taschenrechner.View
             this.btn_7.TabIndex = 6;
             this.btn_7.Text = "7";
             this.btn_7.UseVisualStyleBackColor = true;
+            this.btn_7.Click += new System.EventHandler(this.btn_7_Click);
             // 
             // btn_8
             // 
@@ -117,6 +124,7 @@ namespace Taschenrechner.View
             this.btn_8.TabIndex = 7;
             this.btn_8.Text = "8";
             this.btn_8.UseVisualStyleBackColor = true;
+            this.btn_8.Click += new System.EventHandler(this.btn_8_Click);
             // 
             // btn_9
             // 
@@ -126,6 +134,7 @@ namespace Taschenrechner.View
             this.btn_9.TabIndex = 8;
             this.btn_9.Text = "9";
             this.btn_9.UseVisualStyleBackColor = true;
+            this.btn_9.Click += new System.EventHandler(this.btn_9_Click);
             // 
             // btn_dot
             // 
@@ -135,6 +144,7 @@ namespace Taschenrechner.View
             this.btn_dot.TabIndex = 9;
             this.btn_dot.Text = ".";
             this.btn_dot.UseVisualStyleBackColor = true;
+            this.btn_dot.Click += new System.EventHandler(this.btn_dot_Click);
             // 
             // btn_0
             // 
@@ -144,6 +154,7 @@ namespace Taschenrechner.View
             this.btn_0.TabIndex = 10;
             this.btn_0.Text = "0";
             this.btn_0.UseVisualStyleBackColor = true;
+            this.btn_0.Click += new System.EventHandler(this.btn_0_Click);
             // 
             // btn_enter
             // 
@@ -153,6 +164,7 @@ namespace Taschenrechner.View
             this.btn_enter.TabIndex = 11;
             this.btn_enter.Text = "Enter";
             this.btn_enter.UseVisualStyleBackColor = true;
+            this.btn_enter.Click += new System.EventHandler(this.btn_enter_Click);
             // 
             // tbox_result
             // 
@@ -170,6 +182,7 @@ namespace Taschenrechner.View
             this.btn_back.TabIndex = 13;
             this.btn_back.Text = "<--";
             this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_nebenrechnung
             // 
@@ -179,6 +192,7 @@ namespace Taschenrechner.View
             this.btn_nebenrechnung.TabIndex = 14;
             this.btn_nebenrechnung.Text = "Nebenrechnung";
             this.btn_nebenrechnung.UseVisualStyleBackColor = true;
+            this.btn_nebenrechnung.Click += new System.EventHandler(this.btn_nebenrechnung_Click);
             // 
             // FormParametereingabe
             // 
