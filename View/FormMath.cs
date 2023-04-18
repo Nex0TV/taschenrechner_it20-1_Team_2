@@ -20,13 +20,15 @@ namespace Taschenrechner
         }
 
         private FormParametereingabe EingabeModul = new FormParametereingabe();
-
+        private History History = new History();
         private void btnFactorial_Click(object sender, EventArgs e)
         {
             EingabeModul.set_titel("Fakultät");
             EingabeModul.ShowDialog();
 
             int result = Mathematik.Fakultaet(Convert.ToInt32(EingabeModul.Parameter));
+
+            History.SaveNewCount(result.ToString());
 
             this.lblResultText.Text = "Fakultät:";
             this.lblResult.Text = result.ToString();
@@ -45,6 +47,8 @@ namespace Taschenrechner
             int exponent = Convert.ToInt32(EingabeModul.Parameter);
 
             double result = Mathematik.Potenz(zahl, exponent);
+
+            History.SaveNewCount(result.ToString());
 
             this.lblResultText.Text = "Potenz:";
             this.lblResult.Text = result.ToString();
@@ -65,6 +69,11 @@ namespace Taschenrechner
 
             int[] primzahlen = Mathematik.Primzahlen(startzahl, endzahl);
 
+            foreach(int primzahl in primzahlen)
+            {
+                History.SaveNewCount(primzahl.ToString());
+            }
+
             this.lblResultText.Text = "Primzahlen";
             this.lblResult.Text = string.Join(", ", primzahlen);
         }
@@ -76,6 +85,8 @@ namespace Taschenrechner
 
             double result = Mathematik.Wurzel(Convert.ToDouble(EingabeModul.Parameter));
 
+            History.SaveNewCount(result.ToString());
+
             this.lblResultText.Text = "Wurzel:";
             this.lblResult.Text = result.ToString();
         }
@@ -86,6 +97,8 @@ namespace Taschenrechner
             EingabeModul.ShowDialog();
 
             string result = Mathematik.ZahlZuBruch(Convert.ToDouble(EingabeModul.Parameter));
+
+            History.SaveNewCount(result.ToString());
 
             this.lblResultText.Text = "Bruch:";
             this.lblResult.Text = result.ToString();
@@ -104,6 +117,8 @@ namespace Taschenrechner
             int nenner= Convert.ToInt32(EingabeModul.Parameter);
 
             double result = Mathematik.Bruch(zaehler, nenner);
+
+            History.SaveNewCount(result.ToString());
 
             this.lblResultText.Text = "Zahl:";
             this.lblResult.Text = result.ToString();

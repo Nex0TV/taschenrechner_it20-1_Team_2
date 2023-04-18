@@ -13,8 +13,6 @@ namespace Taschenrechner.Classes
             if (psatz == 0) return grundwert;
             var prozent = ((psatz / 100) * grundwert) + grundwert;
 
-            (new History()).SaveNewCount(prozent.ToString());
-
             return prozent;
         }
 
@@ -22,8 +20,6 @@ namespace Taschenrechner.Classes
         {
             if (prozentsatz == 0) return grundwert;
             var prozent = grundwert - ((prozentsatz / 100) * grundwert);
-
-            (new History()).SaveNewCount(prozent.ToString());
 
             return prozent;
         }
@@ -33,8 +29,6 @@ namespace Taschenrechner.Classes
             if (bruttopreis <= 0) return 0;
             var preis = bruttopreis * 0.81;
 
-            (new History()).SaveNewCount(preis.ToString());
-
             return preis;
         }
 
@@ -43,16 +37,12 @@ namespace Taschenrechner.Classes
             if(nettopreis <= 0) return 0;
             var preis = nettopreis * 100/119;
 
-            (new History()).SaveNewCount(preis.ToString());
-
             return preis;
         }
         public static double Prozentsatz(double prozentwert, double grundwert)
         {
             if (grundwert <= 0) return -1;
             var prozent = (prozentwert / grundwert) * 100;
-
-            (new History()).SaveNewCount(prozent.ToString());
 
             return prozent;
         }

@@ -24,8 +24,6 @@ namespace Taschenrechner.Classes
         {
             var umfang = durchmesser * Pi;
 
-            (new History()).SaveNewCount(umfang.ToString());
-
             return umfang;
         }
 
@@ -38,8 +36,6 @@ namespace Taschenrechner.Classes
         {
             float radius = durchmesser / 2;
             var flaeche = radius * radius * Pi;
-
-            (new History()).SaveNewCount(flaeche.ToString());
 
             return flaeche;
         }
@@ -55,8 +51,6 @@ namespace Taschenrechner.Classes
         {
             var flaeche = seiteC * hoehec / 2;
 
-            (new History()).SaveNewCount(flaeche.ToString());
-
             return flaeche;
         }
 
@@ -71,8 +65,6 @@ namespace Taschenrechner.Classes
         {
             var umfang = seiteA + seiteB + seiteC;
 
-            (new History()).SaveNewCount(umfang.ToString());
-
             return umfang;
         }
 
@@ -86,8 +78,6 @@ namespace Taschenrechner.Classes
         {
             var umfang = (seiteA + seiteB) * 2;
 
-            (new History()).SaveNewCount(umfang.ToString());
-
             return umfang;
         }
 
@@ -100,8 +90,6 @@ namespace Taschenrechner.Classes
         public static float ParallelogrammFlaeche (float seiteB, float hoeheB)
         {
             var flaeche = seiteB * hoeheB;
-
-            (new History()).SaveNewCount(flaeche.ToString());
 
             return flaeche;
         }

@@ -22,7 +22,7 @@ namespace Taschenrechner
         }
 
         private FormParametereingabe EingabeModul = new FormParametereingabe();
-
+        private History History = new History();
         private void btnCircle_Click(object sender, EventArgs e)
         {
             this.lblGeometrischeForm.Text = "Kreis";
@@ -34,6 +34,9 @@ namespace Taschenrechner
 
             float umfang = Geometrie.KreisUmfang(durchmesser);
             float flaeche = Geometrie.KreisFlaeche(durchmesser);
+
+            History.SaveNewCount(umfang.ToString());
+            History.SaveNewCount(flaeche.ToString());
 
             this.lblUmfang.Text = umfang.ToString();
             this.lblFlaeche.Text = flaeche.ToString();
@@ -66,6 +69,9 @@ namespace Taschenrechner
             float umfang = Geometrie.DreieckUmfang(seiteA, seiteB, seiteC);
             float flaeche = Geometrie.DreieckFlaeche(seiteC, hoeheC);
 
+            History.SaveNewCount(umfang.ToString());
+            History.SaveNewCount(flaeche.ToString());
+
             this.lblUmfang.Text = umfang.ToString();
             this.lblFlaeche.Text = flaeche.ToString();
         }
@@ -91,6 +97,9 @@ namespace Taschenrechner
 
             float umfang = Geometrie.ParallelogrammUmfang(seiteA, seiteB);
             float flaeche = Geometrie.ParallelogrammFlaeche(seiteB, hoeheB);
+
+            History.SaveNewCount(umfang.ToString());
+            History.SaveNewCount(flaeche.ToString());
 
             this.lblUmfang.Text = umfang.ToString();
             this.lblFlaeche.Text = flaeche.ToString();

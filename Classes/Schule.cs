@@ -14,16 +14,12 @@ namespace Taschenrechner.Classes
 
             var durchschnitt = summe / noten.Length;
 
-            (new History()).SaveNewCount(durchschnitt.ToString());
-
             return durchschnitt;
         }
 
         public static int Note (float durchschnitt)
         {
             var note = (int)(durchschnitt + 0.5f);
-
-            (new History()).SaveNewCount(note.ToString());
 
             return note;
         }
@@ -39,8 +35,6 @@ namespace Taschenrechner.Classes
                     validierteNoten[validierteNoten.Length - 1] = note;
                 }
             }
-
-            (new History()).SaveNewCount(validierteNoten.ToString());
 
             return validierteNoten;
         }

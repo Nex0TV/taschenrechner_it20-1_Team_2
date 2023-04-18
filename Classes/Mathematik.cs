@@ -29,8 +29,6 @@ namespace Taschenrechner.Classes
 
             }
 
-            (new History()).SaveNewCount(ergebnis.ToString());
-
             return ergebnis;
         }
 
@@ -49,8 +47,6 @@ namespace Taschenrechner.Classes
                 ergebnis *= zahl;
             }
 
-            (new History()).SaveNewCount(ergebnis.ToString());
-
             return ergebnis;
         }
 
@@ -65,7 +61,6 @@ namespace Taschenrechner.Classes
             if(nenner != 0)
             {
                 double ergebnis = Convert.ToDouble(zaehler) / Convert.ToDouble(nenner);
-                (new History()).SaveNewCount(ergebnis.ToString());
                 return ergebnis;
             }
             else
@@ -108,8 +103,6 @@ namespace Taschenrechner.Classes
             while ((x * x).ToString("F6") != zahl.ToString("F6"));
 
             var wurzel = Convert.ToDouble(x.ToString("F6"));
-
-            (new History()).SaveNewCount(wurzel.ToString());
 
             return wurzel;
         }

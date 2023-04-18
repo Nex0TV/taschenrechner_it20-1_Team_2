@@ -21,6 +21,8 @@ namespace Taschenrechner
 
         private FormParametereingabe EingabeModul = new FormParametereingabe();
 
+        private History History = new History();
+
         private void btnAverageMark_Click(object sender, EventArgs e)
         {
             EingabeModul.set_titel("Noten");
@@ -41,6 +43,10 @@ namespace Taschenrechner
             int anzahl = Schule.Anzahl(noten);
             float durchschnitt = Schule.Durchschnitt(noten);
             int note = Schule.Note(durchschnitt);
+
+            History.SaveNewCount(durchschnitt.ToString());
+            History.SaveNewCount(note.ToString());
+            History.SaveNewCount(anzahl.ToString());
 
             this.lblResultDurchschnitt.Text = durchschnitt.ToString();
             this.lblResultEmpfehlung.Text = note.ToString();
