@@ -11,11 +11,11 @@ namespace Taschenrechner.Classes
     public class History
     {
         private List<string> LogHistory;
-        private string filename = "loghistory.txt";
+        public string filename = "loghistory.txt";
 
         public History()
         { 
-            LogHistory = new List<string>();
+            LogHistory = GetHistory();
         }
 
         /// <summary>
