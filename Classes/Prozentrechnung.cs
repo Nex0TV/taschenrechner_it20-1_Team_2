@@ -11,30 +11,50 @@ namespace Taschenrechner.Classes
         public static double ProzentDazu (double psatz, double grundwert)
         {
             if (psatz == 0) return grundwert;
-            return ((psatz / 100) * grundwert) + grundwert;
+            var prozent = ((psatz / 100) * grundwert) + grundwert;
+
+            (new History()).SaveNewCount(prozent.ToString());
+
+            return prozent;
         }
 
         public static double ProzentWeg(double prozentsatz, double grundwert)
         {
             if (prozentsatz == 0) return grundwert;
-            return grundwert - ((prozentsatz / 100) * grundwert);
+            var prozent = grundwert - ((prozentsatz / 100) * grundwert);
+
+            (new History()).SaveNewCount(prozent.ToString());
+
+            return prozent;
         }
 
         public static double Nettopreis(double bruttopreis)
         {
             if (bruttopreis <= 0) return 0;
-            return bruttopreis * 0.81;
+            var preis = bruttopreis * 0.81;
+
+            (new History()).SaveNewCount(preis.ToString());
+
+            return preis;
         }
 
         public static double Bruttopreis(double nettopreis)
         {
             if(nettopreis <= 0) return 0;
-            return nettopreis * 100/119;
+            var preis = nettopreis * 100/119;
+
+            (new History()).SaveNewCount(preis.ToString());
+
+            return preis;
         }
         public static double Prozentsatz(double prozentwert, double grundwert)
         {
             if (grundwert <= 0) return -1;
-            return (prozentwert / grundwert) * 100;
+            var prozent = (prozentwert / grundwert) * 100;
+
+            (new History()).SaveNewCount(prozent.ToString());
+
+            return prozent;
         }
     }
 }
