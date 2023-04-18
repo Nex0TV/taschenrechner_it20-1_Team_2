@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -10,6 +11,10 @@ namespace Taschenrechner.Classes
 {
     public class History
     {
+        private byte[] key = {
+            0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
+            0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16
+        };
         private List<string> LogHistory;
         public string filename = "loghistory.txt";
 
@@ -34,6 +39,25 @@ namespace Taschenrechner.Classes
             {
                 writer.WriteLine(result);
             }
+
+            /*using (FileStream fileStream = new FileStream(filename, FileMode.OpenOrCreate))
+            {
+                using (Aes aes = Aes.Create())
+                {
+                    aes.Key = key;
+                    byte[] iv = aes.IV;
+                    fileStream.Write(iv, 0, iv.Length);
+
+                    using (CryptoStream cryptoStream = new CryptoStream(fileStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter encryptedStream = new StreamWriter(cryptoStream))
+                        {
+                            encryptedStream.WriteLine(result);
+                        }
+                    }
+                }
+            }*/
+
         }
 
         /// <summary>
@@ -56,6 +80,37 @@ namespace Taschenrechner.Classes
                         history.Add(lines[i]);
                     }
                 }
+
+                /*string[] lines = new string[0];
+
+                using (FileStream fileStream = new FileStream(filename, FileMode.Open))
+                {
+                    using (Aes aes = Aes.Create())
+                    {
+                        byte[] iv = new byte[aes.IV.Length];
+                        int numBytesToRead = aes.IV.Length;
+                        int numBytesRead = 0;
+                        while (numBytesToRead > 0)
+                        {
+                            int n = fileStream.Read(iv, numBytesRead, numBytesToRead);
+                            if (n == 0) break;
+
+                            numBytesRead += n;
+                            numBytesToRead += n;
+                        }
+
+                        using (CryptoStream cryptoStream = new CryptoStream(fileStream, aes.CreateDecryptor(key, iv), CryptoStreamMode.Read))
+                        {
+                            using (StreamReader decryptedStream = new StreamReader(cryptoStream))
+                            {
+                                while (lines.Length != decryptedStream.Read())
+                                {
+                                    history.Add(decryptedStream.ReadLine());
+                                }
+                            }
+                        }
+                    }
+                }*/
             }
             catch (Exception ex)
             {
