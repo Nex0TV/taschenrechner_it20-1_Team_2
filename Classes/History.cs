@@ -25,12 +25,13 @@ namespace Taschenrechner.Classes
         /// <returns>void</returns>
         public void SaveNewCount(string calculation)
         {
-            Console.WriteLine(calculation);
-            LogHistory.Add(calculation);
+            string timestamp = DateTime.Now.ToString();
+            string result = timestamp + " - " + calculation;
+            LogHistory.Add(result);
 
             using (StreamWriter writer = new StreamWriter(filename, true))
             {
-                writer.WriteLine(calculation);
+                writer.WriteLine(result);
             }
         }
 
