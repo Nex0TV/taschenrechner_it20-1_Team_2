@@ -27,6 +27,7 @@ namespace Taschenrechner.Classes
         {
             string timestamp = DateTime.Now.ToString();
             string result = timestamp + " - " + calculation;
+
             LogHistory.Add(result);
 
             using (StreamWriter writer = new StreamWriter(filename, true))
