@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Taschenrechner.Model;
+using Taschenrechner.Classes;
 
 namespace Taschenrechner.View
 {
     public partial class FormBasicCalculator : Form
     {
+        private History LogHistory;
+
         public FormBasicCalculator()
         {
+            LogHistory = new History();
+
             InitializeComponent();
         }
 

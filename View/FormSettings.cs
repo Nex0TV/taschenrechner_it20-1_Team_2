@@ -24,7 +24,7 @@ namespace Taschenrechner
             ColorDialog DialogFontColor = new ColorDialog();
             // Keeps the user from selecting a custom color.
             DialogFontColor.AllowFullOpen = false;
-            // Allows the user to get help. (The default is false.)
+            // Allows the user to get help. (The default is false)
             DialogFontColor.ShowHelp = true;
             // Sets the initial color select to the current text color.
             DialogFontColor.Color = btnFontColor.ForeColor;
@@ -53,8 +53,6 @@ namespace Taschenrechner
                 var bgColor = DialogBackgroundColor.Color;
                 
                 Console.WriteLine(bgColor);
-
-                
             }
         }
 

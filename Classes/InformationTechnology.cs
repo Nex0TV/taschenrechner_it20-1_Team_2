@@ -46,7 +46,9 @@ namespace Taschenrechner.Classes
                 int decimalBaseNumber = ConvertToDecimal(number, currentBase);
 
                 int resultNumber = ConvertToLowerBase(decimalBaseNumber, resultBase);
-                
+
+                (new History()).SaveNewCount(resultNumber.ToString());
+
                 return resultNumber;
             }
             /// <summary>
@@ -94,7 +96,7 @@ namespace Taschenrechner.Classes
                 int fps,
                 int videoLength,
                 int imageSize,
-                int colorDepth = 0, 
+                int colorDepth = 0,
                 int channels = 0,
                 int width = 0,
                 int height = 0
@@ -104,7 +106,12 @@ namespace Taschenrechner.Classes
                 {
                     imageSize = colorDepth * channels * width * height;
                 }
-                return imageSize * fps * videoLength;
+
+                var videoSize = imageSize * fps * videoLength;
+
+                (new History()).SaveNewCount(videoSize.ToString());
+
+                return videoSize;
             }
         }
 
@@ -130,6 +137,9 @@ namespace Taschenrechner.Classes
                         number /= divider;
                     }
                 }
+
+                (new History()).SaveNewCount(number.ToString());
+
                 return number;
             }
 
@@ -167,6 +177,9 @@ namespace Taschenrechner.Classes
                     int iterations = BinaryPrefixes[resultPrefix];
                     result = ToHigherBinaryPrefix(numWithoutPrefix, iterations);
                 }
+
+                (new History()).SaveNewCount(result.ToString());
+
 
                 return $"{result} {resultPrefix}";
             }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\History.cs" />
     <Compile Include="Classes\Schule.cs" />
     <Compile Include="Classes\Geometrie.cs" />
     <Compile Include="Classes\Mathematik.cs" />

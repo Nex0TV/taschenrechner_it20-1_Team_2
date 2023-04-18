@@ -22,7 +22,11 @@ namespace Taschenrechner.Classes
         /// <returns>Circumference</returns>
         public static float KreisUmfang (float durchmesser)
         {
-            return durchmesser * Pi;
+            var umfang = durchmesser * Pi;
+
+            (new History()).SaveNewCount(umfang.ToString());
+
+            return umfang;
         }
 
         /// <summary>
@@ -30,10 +34,14 @@ namespace Taschenrechner.Classes
         /// </summary>
         /// <param name="durchmesser">Diameter of a circle</param>
         /// <returns>Area</returns>
-        public static float KreisFlaeche (float durchmesser)
+        public static float KreisFlaeche(float durchmesser)
         {
             float radius = durchmesser / 2;
-            return radius * radius * Pi;
+            var flaeche = radius * radius * Pi;
+
+            (new History()).SaveNewCount(flaeche.ToString());
+
+            return flaeche;
         }
 
 
@@ -43,9 +51,13 @@ namespace Taschenrechner.Classes
         /// <param name="seiteC">Side c of a triangle</param>
         /// <param name="hoehec">Height of side c of a triangle</param>
         /// <returns>Area</returns>
-        public static float DreieckFlaeche (float seiteC, float hoehec)
+        public static float DreieckFlaeche(float seiteC, float hoehec)
         {
-            return seiteC * hoehec / 2;
+            var flaeche = seiteC * hoehec / 2;
+
+            (new History()).SaveNewCount(flaeche.ToString());
+
+            return flaeche;
         }
 
         /// <summary>
@@ -55,9 +67,13 @@ namespace Taschenrechner.Classes
         /// <param name="seiteB">Side b</param>
         /// <param name="seiteC">Side c</param>
         /// <returns>Triangle perimeter</returns>
-        public static float DreieckUmfang (float seiteA, float seiteB, float seiteC)
+        public static float DreieckUmfang(float seiteA, float seiteB, float seiteC)
         {
-            return seiteA + seiteB + seiteC;
+            var umfang = seiteA + seiteB + seiteC;
+
+            (new History()).SaveNewCount(umfang.ToString());
+
+            return umfang;
         }
 
         /// <summary>
@@ -68,7 +84,11 @@ namespace Taschenrechner.Classes
         /// <returns>Parallelogram circumference</returns>
         public static float ParallelogrammUmfang (float seiteA, float seiteB)
         {
-            return (seiteA + seiteB) * 2;
+            var umfang = (seiteA + seiteB) * 2;
+
+            (new History()).SaveNewCount(umfang.ToString());
+
+            return umfang;
         }
 
         /// <summary>
@@ -79,7 +99,11 @@ namespace Taschenrechner.Classes
         /// <returns></returns>
         public static float ParallelogrammFlaeche (float seiteB, float hoeheB)
         {
-            return seiteB * hoeheB;
+            var flaeche = seiteB * hoeheB;
+
+            (new History()).SaveNewCount(flaeche.ToString());
+
+            return flaeche;
         }
     }
 }

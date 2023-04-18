@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using Taschenrechner.Classes;
 
 namespace Taschenrechner.Model
 {
@@ -28,6 +29,9 @@ namespace Taschenrechner.Model
             }
             // Calculate outside the bracktes:
             input = CalculateWithoutBrackets(input).ToString();
+
+            (new History()).SaveNewCount(input.ToString());
+
             return input;
         }
 
@@ -40,6 +44,7 @@ namespace Taschenrechner.Model
             if (numbers.Count == 1) return Convert.ToDouble(input);
             result = CalculateList(result, point_operators, numbers); // the list "numbers" is modified during the process
             result = CalculateList(result, dash_operators, numbers);
+
             return result;
         }
 
