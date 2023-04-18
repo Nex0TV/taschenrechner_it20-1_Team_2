@@ -92,6 +92,7 @@
             // 
             // btnSaveAndQuit
             // 
+            this.btnSaveAndQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveAndQuit.Location = new System.Drawing.Point(17, 390);
             this.btnSaveAndQuit.Name = "btnSaveAndQuit";
             this.btnSaveAndQuit.Size = new System.Drawing.Size(400, 48);
@@ -101,6 +102,7 @@
             // 
             // btnSettingsReset
             // 
+            this.btnSettingsReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSettingsReset.Location = new System.Drawing.Point(423, 390);
             this.btnSettingsReset.Name = "btnSettingsReset";
             this.btnSettingsReset.Size = new System.Drawing.Size(400, 48);
@@ -135,6 +137,7 @@
             this.Controls.Add(this.btnFontColor);
             this.Controls.Add(this.lblFontColor);
             this.Controls.Add(this.lblFontSize);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormSettings";
             this.Text = "Einstellungen";
             this.ResumeLayout(false);
